@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🛕 Hanuman Temple Global Styles */
+
+body {
+  @apply bg-[#0a0f12] text-gray-100 font-sans;
+}
+
+/* Headings — golden temple touch */
+h1, h2, h3, h4, h5, h6 {
+  @apply text-temple-gold font-semibold;
+}
+
+/* Links — subtle gold hover */
+a {
+  @apply text-temple-gold hover:text-yellow-400 transition-colors;
+}

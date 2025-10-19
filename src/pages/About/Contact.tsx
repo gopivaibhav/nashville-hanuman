@@ -1,0 +1,83 @@
+import React, { useState } from "react";
+import { Mail, MapPin, Phone } from "lucide-react";
+
+const Contact: React.FC = () => {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert("Your message has been sent! Jai Hanuman!");
+    setForm({ name: "", email: "", message: "" });
+  };
+
+  return (
+    <div className="pt-24 pb-16 container mx-auto px-4">
+      <h1 className="text-3xl font-bold text-center text-[#7b1113] mb-8">
+        Contact Us
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Contact Info */}
+        <div className="space-y-4 text-gray-700">
+          <p className="flex items-center">
+            <MapPin className="text-[#7b1113] mr-2" />
+            123 Hanuman Avenue, Nashville, TN 37209
+          </p>
+          <p className="flex items-center">
+            <Phone className="text-[#7b1113] mr-2" /> (615) 555-1080
+          </p>
+          <p className="flex items-center">
+            <Mail className="text-[#7b1113] mr-2" /> info@nashvillehanuman.org
+          </p>
+        </div>
+
+        {/* Form */}
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white p-6 rounded-xl shadow-md border border-yellow-100"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={form.name}
+            onChange={handleChange}
+            required
+            className="w-full mb-3 border rounded-md px-3 py-2"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={form.email}
+            onChange={handleChange}
+            required
+            className="w-full mb-3 border rounded-md px-3 py-2"
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            value={form.message}
+            onChange={handleChange}
+            required
+            className="w-full mb-3 border rounded-md px-3 py-2"
+            rows={4}
+          />
+          <button
+            type="submit"
+            className="w-full bg-[#7b1113] text-yellow-100 py-2 rounded-md hover:bg-[#a0181b] transition"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default Contact;
