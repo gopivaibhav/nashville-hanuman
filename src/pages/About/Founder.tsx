@@ -4,7 +4,7 @@ import { User } from "lucide-react";
 const Founder: React.FC = () => {
   return (
     <div className="pt-24 pb-16 container mx-auto px-4 text-center">
-      <h1 className="text-3xl font-bold text-[#7b1113] mb-6">Our Founder</h1>
+      <h1 className="text-3xl font-bold text-[#ff9933] mb-6">Our Founder</h1>
       <img
         src="/images/founders/founder.jpg"
         alt="Founder"

@@ -50,9 +50,9 @@ const Home: React.FC = () => {
 
 
 
-      <section className="relative text-center py-20 bg-gradient-to-br from-[#7b1113] via-[#8c1619] to-[#b51c20] text-yellow-100">
+      <section className="relative text-center py-20 bg-gradient-to-br from-[#ff9933] via-[#ffa733] to-[#ffc266] text-[#4a1c1c]">
         <motion.h1
-          className="text-4xl md:text-5xl font-bold mb-4"
+          className="text-4xl md:text-5xl text-[#7b1113] font-bold mb-4"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
@@ -283,14 +283,14 @@ const Home: React.FC = () => {
 
       {/* 🌅 Today's Panchangam Section */}
 <section className="py-16 bg-[#fffaf3] text-center relative overflow-hidden">
-  <h2 className="text-3xl font-bold text-[#7b1113] mb-10 relative">
+  <h2 className="text-3xl font-bold text-[#ff9933] mb-10 relative">
     Today’s Panchangam
     <div className="w-24 h-1 bg-yellow-400 mx-auto mt-2 rounded-full"></div>
   </h2>
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
     {/* 🪔 Special Events */}
     <div className="bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden">
-      <div className="bg-[#7b1113] text-yellow-100 font-semibold py-2 uppercase tracking-wide">
+      <div className="bg-[#7b1113] text-[#ff9933] font-semibold py-2 uppercase tracking-wide">
         Special Events
       </div>
       <div className="bg-[url('/images/pattern-light.png')] bg-opacity-5 bg-cover bg-center p-5 text-left text-gray-800">
@@ -301,7 +301,7 @@ const Home: React.FC = () => {
           { title: "Karthika Masam – 2025", date: "Nov 01 – Nov 30" },
         ].map((item, i) => (
           <div key={i} className="border-b border-yellow-100 py-3 last:border-none">
-            <h3 className="text-[#7b1113] font-semibold text-lg">
+            <h3 className="text-[#ff9933] font-semibold text-lg">
               {item.title}
             </h3>
             <p className="text-sm text-gray-600">{item.date}</p>
@@ -311,7 +311,7 @@ const Home: React.FC = () => {
     </div>
     {/* 🕉️ Temple Schedules */}
     <div className="bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden">
-      <div className="bg-[#7b1113] text-yellow-100 font-semibold py-2 uppercase tracking-wide">
+      <div className="bg-[#7b1113] text-[#ff9933] font-semibold py-2 uppercase tracking-wide">
         Temple Schedules
       </div>
       <div className="flex justify-center space-x-2 mt-3">
@@ -322,7 +322,7 @@ const Home: React.FC = () => {
             // FIX: Template literal was missing the surrounding backticks (`...`)
             className={`px-4 py-1 rounded-t-md text-sm font-medium border transition ${
               activeTab === tab
-                ? "bg-[#7b1113] text-yellow-100 border-[#7b1113]"
+                ? "bg-[#7b1113] text-[#ff9933] border-[#7b1113]"
                 : "bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200"
             }`}
           >
@@ -334,43 +334,43 @@ const Home: React.FC = () => {
         {activeTab === "daily" && (
           <>
             <div className="border-b border-yellow-100 pb-2">
-              <p className="font-semibold text-[#7b1113]">Temple Opens</p>
+              <p className="font-semibold text-[#ff9933]">Temple Opens</p>
               <p className="text-sm text-gray-700">9:00 AM</p>
             </div>
             <div className="border-b border-yellow-100 pb-2">
-              <p className="font-semibold text-[#7b1113]">Rudrabhishekam</p>
+              <p className="font-semibold text-[#ff9933]">Rudrabhishekam</p>
               <p className="text-sm text-gray-700">7:00 AM – 8:00 AM</p>
             </div>
             <div className="border-b border-yellow-100 pb-2">
-              <p className="font-semibold text-[#7b1113]">Evening Aarati</p>
+              <p className="font-semibold text-[#ff9933]">Evening Aarati</p>
               <p className="text-sm text-gray-700">7:30 PM</p>
             </div>
             <div>
-              <p className="font-semibold text-[#7b1113]">Temple Closes</p>
+              <p className="font-semibold text-[#ff9933]">Temple Closes</p>
               <p className="text-sm text-gray-700">9:00 PM</p>
             </div>
           </>
         )}
         {activeTab === "weekly" && (
           <>
-            <p className="font-semibold text-[#7b1113]">Hanuman Abhishekam – Tuesday</p>
-            <p className="font-semibold text-[#7b1113]">Siva Abhishekam – Thursday</p>
-            <p className="font-semibold text-[#7b1113]">Saraswathi Abhishekam – Friday</p>
-            <p className="font-semibold text-[#7b1113]">Rama Abhishekam – Saturday</p>
+            <p className="font-semibold text-[#ff9933]">Hanuman Abhishekam – Tuesday</p>
+            <p className="font-semibold text-[#ff9933]">Siva Abhishekam – Thursday</p>
+            <p className="font-semibold text-[#ff9933]">Saraswathi Abhishekam – Friday</p>
+            <p className="font-semibold text-[#ff9933]">Rama Abhishekam – Saturday</p>
           </>
         )}
         {activeTab === "monthly" && (
           <>
-            <p className="font-semibold text-[#7b1113]">Pournami Puja – Every Full Moon</p>
-            <p className="font-semibold text-[#7b1113]">Amavasya Puja – Every New Moon</p>
-            <p className="font-semibold text-[#7b1113]">Sankatahara Chathurthi – Monthly</p>
+            <p className="font-semibold text-[#ff9933]">Pournami Puja – Every Full Moon</p>
+            <p className="font-semibold text-[#ff9933]">Amavasya Puja – Every New Moon</p>
+            <p className="font-semibold text-[#ff9933]">Sankatahara Chathurthi – Monthly</p>
           </>
         )}
       </div>
     </div>
     {/* 🎉 Upcoming Events */}
     <div className="bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden">
-      <div className="bg-[#7b1113] text-yellow-100 font-semibold py-2 uppercase tracking-wide">
+      <div className="bg-[#7b1113] text-[#ff9933] font-semibold py-2 uppercase tracking-wide">
         Upcoming Events
       </div>
       <div className="bg-[url('/images/pattern-light.png')] bg-opacity-5 bg-cover bg-center p-5 text-left text-gray-800 space-y-4">
@@ -383,7 +383,7 @@ const Home: React.FC = () => {
           <div key={i} className="flex items-center space-x-4 border-b border-yellow-100 pb-3 last:border-none">
             <img src={event.img} alt={event.title} className="w-12 h-12 rounded-md object-cover border border-yellow-200" />
             <div>
-              <h3 className="text-[#7b1113] font-semibold text-sm">{event.title}</h3>
+              <h3 className="text-[#ff9933] font-semibold text-sm">{event.title}</h3>
               <p className="text-xs text-gray-600">{event.date}</p>
             </div>
           </div>
@@ -394,25 +394,26 @@ const Home: React.FC = () => {
 </section>
 
       {/* 🛕 Visit Temple CTA */}
-      <section className="py-16 bg-[#7b1113] text-yellow-100 text-center">
-        <motion.h2
-          className="text-3xl font-bold mb-4"
-          initial={{ opacity: 0, y: -10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-        >
-          Visit the Temple
-        </motion.h2>
-        <p className="max-w-2xl mx-auto text-lg mb-6">
-          Join us for daily pujas, festivals, and community gatherings.  
-          Experience the divine grace of Lord Hanuman and our beautiful temple atmosphere.
-        </p>
-        <Link
-          to="/about/contact"
-          className="inline-block bg-yellow-300 text-[#7b1113] font-semibold px-6 py-3 rounded-lg hover:bg-yellow-400 transition"
-        >
-          Get Directions
-        </Link>
-      </section>
+     <section className="py-16 bg-[#ff9933] text-white text-center">
+  <motion.h2
+    className="text-3xl text-white font-bold mb-4"
+    initial={{ opacity: 0, y: -10 }}
+    whileInView={{ opacity: 1, y: 0 }}
+  >
+    Visit the Temple
+  </motion.h2>
+  <p className="max-w-2xl mx-auto text-lg mb-6 text-[#fff8e1]">
+    Join us for daily pujas, festivals, and community gatherings.  
+    Experience the divine grace of Lord Hanuman and our beautiful temple atmosphere.
+  </p>
+  <Link
+    to="/about/contact"
+    className="inline-block bg-white text-[#ff9933] font-semibold px-6 py-3 rounded-lg hover:bg-[#fff4e6] transition"
+  >
+    Get Directions
+  </Link>
+</section>
+
     </div>
   );
 };

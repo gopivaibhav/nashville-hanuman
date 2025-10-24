@@ -34,7 +34,7 @@ const Volunteer: React.FC = () => {
           <div className="flex justify-center mb-4">
             <HeartHandshake className="text-[#b45309]" size={40} />
           </div>
-          <h2 className="text-2xl font-semibold text-[#7b1113] mb-3 text-center">
+          <h2 className="text-2xl font-semibold text-[#ff9933] mb-3 text-center">
             Why Volunteer?
           </h2>
           <p className="text-gray-700 mb-3 leading-relaxed">
@@ -60,7 +60,7 @@ const Volunteer: React.FC = () => {
           <div className="flex justify-center mb-4">
             <Users className="text-[#b45309]" size={40} />
           </div>
-          <h2 className="text-2xl font-semibold text-[#7b1113] mb-3 text-center">
+          <h2 className="text-2xl font-semibold text-[#ff9933] mb-3 text-center">
             Where You Can Help
           </h2>
           <p className="text-gray-700 mb-3 leading-relaxed">
@@ -91,7 +91,7 @@ const Volunteer: React.FC = () => {
           <div className="flex justify-center mb-3">
             <Sparkles className="text-[#b45309]" size={36} />
           </div>
-          <h3 className="text-xl font-semibold text-[#7b1113] mb-3 text-center">
+          <h3 className="text-xl font-semibold text-[#ff9933] mb-3 text-center">
             Benefits of Volunteering
           </h3>
           <ul className="list-disc list-inside text-gray-700 text-left space-y-2">
@@ -111,7 +111,7 @@ const Volunteer: React.FC = () => {
           <div className="flex justify-center mb-3">
             <Leaf className="text-[#b45309]" size={36} />
           </div>
-          <h3 className="text-xl font-semibold text-[#7b1113] mb-3 text-center">
+          <h3 className="text-xl font-semibold text-[#ff9933] mb-3 text-center">
             Student Volunteers (Ages 12+)
           </h3>
           <p className="text-gray-700 leading-relaxed">
@@ -135,7 +135,7 @@ const Volunteer: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-2xl font-semibold text-[#7b1113] mb-4">
+        <h2 className="text-2xl font-semibold text-[#ff9933] mb-4">
           Ready to Serve?
         </h2>
         <p className="text-gray-700 max-w-2xl mx-auto mb-6">

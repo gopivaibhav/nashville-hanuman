@@ -6,7 +6,7 @@ const History: React.FC = () => {
   return (
     <div className="pt-24 pb-16 container mx-auto px-4">
       <motion.h1
-        className="text-3xl font-bold text-center text-[#7b1113] mb-8"
+        className="text-3xl font-bold text-center text-[#ff9933] mb-8"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
       >
@@ -14,7 +14,7 @@ const History: React.FC = () => {
       </motion.h1>
 
       <div className="max-w-4xl mx-auto text-gray-700 text-lg leading-relaxed">
-        <ScrollText className="text-[#7b1113] mb-4 mx-auto" size={32} />
+        <ScrollText className="text-[#ff9933] mb-4 mx-auto" size={32} />
         <p className="mb-6">
           The idea of building a Nashville Hanuman Temple was envisioned in 2021
           by our founder and community devotees. By 2025, that dream blossomed

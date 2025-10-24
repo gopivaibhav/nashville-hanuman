@@ -8,7 +8,7 @@ const Gurus: React.FC = () => {
 
   return (
     <div className="pt-24 pb-16 container mx-auto px-4">
-      <h1 className="text-3xl font-bold text-center text-[#7b1113] mb-8">
+      <h1 className="text-3xl font-bold text-center text-[#ff9933] mb-8">
         Our Gurus
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -22,7 +22,7 @@ const Gurus: React.FC = () => {
               alt={guru.name}
               className="w-40 h-40 object-cover mx-auto rounded-full mb-3"
             />
-            <h2 className="text-lg font-semibold text-[#7b1113]">
+            <h2 className="text-lg font-semibold text-[#ff9933]">
               {guru.name}
             </h2>
           </div>

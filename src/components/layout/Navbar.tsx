@@ -15,20 +15,23 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-[#7b1113] text-yellow-100 shadow-md fixed w-full z-50">
-      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+    // 🟧 Deep saffron navbar with contrasting text
+    <nav className="bg-[#ff9933] text-[#4a1c1c] shadow-md fixed w-full z-50">
+    <div className="w-full flex justify-between items-center px-4 py-3">
+
+
         {/* Logo */}
         <Link
           to="/"
           onClick={closeAll}
-          className="font-bold text-lg sm:text-xl text-yellow-300"
+          className="font-bold text-lg sm:text-xl text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
         >
           Nashville Hanuman Temple
         </Link>
 
         {/* Hamburger Icon */}
         <button
-          className="md:hidden text-yellow-200 focus:outline-none"
+          className="md:hidden text-[#4a1c1c] focus:outline-none"
           onClick={toggleMenu}
           aria-label="Toggle Menu"
         >
@@ -36,159 +39,121 @@ const Navbar: React.FC = () => {
         </button>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6 items-center font-medium">
+        <ul className="hidden md:flex space-x-6 items-center font-medium text-[#4a1c1c]">
+
           <li>
-            <Link to="/" className="hover:text-yellow-300 transition-colors">
+            <Link to="/" className="text-[#4a1c1c] transition-colors">
               Home
             </Link>
           </li>
 
           <li>
-            <Link to="/deities" className="hover:text-yellow-300 transition-colors">
+            <Link to="/deities" className="text-[#4a1c1c] transition-colors">
               Deities
             </Link>
           </li>
 
-          {/* Religious Dropdown (Hover) */}
+          {/* Religious Dropdown */}
           <li
             className="relative"
             onMouseEnter={() => setActiveDropdown("religious")}
             onMouseLeave={() => setActiveDropdown(null)}
           >
-            <button className="flex items-center hover:text-yellow-300 transition-colors">
+            <button className="flex items-center hover:text-[#fff4e6] transition-colors">
               Religious <ChevronDown size={16} className="ml-1" />
             </button>
             <ul
               className={classNames(
-                "absolute left-0 mt-2 bg-[#7b1113] shadow-lg rounded-md w-56 transition-all duration-200 ease-in-out",
+                "absolute left-0 mt-2 bg-[#ff9933] shadow-lg rounded-md w-56 transition-all duration-200 ease-in-out",
                 activeDropdown === "religious"
                   ? "opacity-100 visible translate-y-0"
                   : "opacity-0 invisible -translate-y-2"
               )}
             >
-              <li>
-                <Link
-                  to="/religious/puja-schedule"
-                  onClick={closeAll}
-                  className="block px-4 py-2 hover:bg-[#8c1619]"
-                >
-                  Puja Schedule
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/religious/festivals"
-                  onClick={closeAll}
-                  className="block px-4 py-2 hover:bg-[#8c1619]"
-                >
-                  Festivals
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/religious/priests"
-                  onClick={closeAll}
-                  className="block px-4 py-2 hover:bg-[#8c1619]"
-                >
-                  Priests
-                </Link>
-              </li>
+              {[
+                { label: "Puja Schedule", path: "/religious/puja-schedule" },
+                { label: "Festivals", path: "/religious/festivals" },
+                { label: "Priests", path: "/religious/priests" },
+              ].map((item) => (
+                <li key={item.path}>
+                  <Link
+                    to={item.path}
+                    onClick={closeAll}
+                    className="block px-4 py-2 text-[#4a1c1c] hover:bg-[#e67a00] hover:text-white rounded transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </li>
 
           <li>
-            <Link to="/education/hvs" className="hover:text-yellow-300 transition-colors">
+            <Link to="/education/hvs" className="text-[#4a1c1c] transition-colors">
               Education
             </Link>
           </li>
 
           <li>
-            <Link to="/community/halls" className="hover:text-yellow-300 transition-colors">
+            <Link to="/community/halls" className="text-[#4a1c1c] transition-colors">
               Halls
             </Link>
           </li>
 
           <li>
-            <Link to="/ramkibandi" className="hover:text-yellow-300 transition-colors">
+            <Link to="/ramkibandi" className="text-[#4a1c1c] transition-colors">
               Ram Ki Bandi
             </Link>
           </li>
 
           <li>
-            <Link to="/cultural" className="hover:text-yellow-300 transition-colors">
+            <Link to="/cultural" className="text-[#4a1c1c] transition-colors">
               Cultural
             </Link>
           </li>
 
-          {/* About Dropdown (Hover) */}
+          {/* About Dropdown */}
           <li
             className="relative"
             onMouseEnter={() => setActiveDropdown("about")}
             onMouseLeave={() => setActiveDropdown(null)}
           >
-            <button className="flex items-center hover:text-yellow-300 transition-colors">
+            <button className="flex items-center hover:text-[#fff4e6] transition-colors">
               About <ChevronDown size={16} className="ml-1" />
             </button>
             <ul
               className={classNames(
-                "absolute left-0 mt-2 bg-[#7b1113] shadow-lg rounded-md w-56 transition-all duration-200 ease-in-out",
+                "absolute left-0 mt-2 bg-[#ff9933] shadow-lg rounded-md w-56 transition-all duration-200 ease-in-out",
                 activeDropdown === "about"
                   ? "opacity-100 visible translate-y-0"
                   : "opacity-0 invisible -translate-y-2"
               )}
             >
-              <li>
-                <Link
-                  to="/about/history"
-                  onClick={closeAll}
-                  className="block px-4 py-2 hover:bg-[#8c1619]"
-                >
-                  History
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/about/founder"
-                  onClick={closeAll}
-                  className="block px-4 py-2 hover:bg-[#8c1619]"
-                >
-                  Founder
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/about/gurus"
-                  onClick={closeAll}
-                  className="block px-4 py-2 hover:bg-[#8c1619]"
-                >
-                  Gurus
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/about/volunteer"
-                  onClick={closeAll}
-                  className="block px-4 py-2 hover:bg-[#8c1619]"
-                >
-                  Volunteer
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/about/contact"
-                  onClick={closeAll}
-                  className="block px-4 py-2 hover:bg-[#8c1619]"
-                >
-                  Contact
-                </Link>
-              </li>
+              {[
+                { label: "History", path: "/about/history" },
+                { label: "Founder", path: "/about/founder" },
+                { label: "Gurus", path: "/about/gurus" },
+                { label: "Volunteer", path: "/about/volunteer" },
+                { label: "Contact", path: "/about/contact" },
+              ].map((item) => (
+                <li key={item.path}>
+                  <Link
+                    to={item.path}
+                    onClick={closeAll}
+                    className="block px-4 py-2 text-[#4a1c1c] hover:bg-[#e67a00] hover:text-white rounded transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </li>
 
+          {/* Donate Button */}
           <li>
             <Link
               to="/donate"
-              className="bg-yellow-300 text-[#7b1113] px-4 py-2 rounded-md font-semibold hover:bg-yellow-400 transition"
+              className="bg-white text-[#ff9933] px-4 py-2 rounded-md font-semibold hover:bg-[#fff4e6] transition"
             >
               Donate
             </Link>
@@ -196,9 +161,9 @@ const Navbar: React.FC = () => {
         </ul>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden bg-[#7b1113] px-6 pb-4 space-y-3 text-yellow-100">
+        <div className="md:hidden bg-[#ff9933] px-6 pb-4 space-y-3 text-[#4a1c1c] font-medium">
           {[
             { label: "Home", path: "/" },
             { label: "Deities", path: "/deities" },
@@ -216,7 +181,7 @@ const Navbar: React.FC = () => {
               key={item.path}
               to={item.path}
               onClick={closeAll}
-              className="block hover:text-yellow-300"
+              className="block text-[#4a1c1c] transition-colors"
             >
               {item.label}
             </Link>

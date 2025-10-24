@@ -8,12 +8,12 @@ body {
   @apply bg-[#0a0f12] text-gray-100 font-sans;
 }
 
-/* Headings — golden temple touch */
+/* Headings — saffron/deep orange spiritual vibe */
 h1, h2, h3, h4, h5, h6 {
-  @apply text-temple-gold font-semibold;
+  @apply text-[#ff9933] font-semibold; /* Saffron orange */
 }
 
-/* Links — subtle gold hover */
+/* Links — subtle saffron hover */
 a {
-  @apply text-temple-gold hover:text-yellow-400 transition-colors;
+  @apply text-[#ff9933] hover:text-[#ff7b00] transition-colors;
 }

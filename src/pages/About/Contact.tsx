@@ -18,28 +18,28 @@ const Contact: React.FC = () => {
 
   return (
     <div className="pt-24 pb-16 container mx-auto px-4">
-      <h1 className="text-3xl font-bold text-center text-[#7b1113] mb-8">
+      <h1 className="text-3xl font-bold text-center text-[#ff9933] mb-8">
         Contact Us
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Contact Info */}
         <div className="space-y-4 text-gray-700">
           <p className="flex items-center">
-            <MapPin className="text-[#7b1113] mr-2" />
+            <MapPin className="text-[#ff9933] mr-2" />
             123 Hanuman Avenue, Nashville, TN 37209
           </p>
           <p className="flex items-center">
-            <Phone className="text-[#7b1113] mr-2" /> (615) 555-1080
+            <Phone className="text-[#ff9933] mr-2" /> (615) 555-1080
           </p>
           <p className="flex items-center">
-            <Mail className="text-[#7b1113] mr-2" /> info@nashvillehanuman.org
+            <Mail className="text-[#ff9933] mr-2" /> info@nashvillehanuman.org
           </p>
         </div>
 
         {/* Form */}
         <form
           onSubmit={handleSubmit}
-          className="bg-white p-6 rounded-xl shadow-md border border-yellow-100"
+          className="bg-white p-6 rounded-xl shadow-md border border-[#ffe6b3]"
         >
           <input
             type="text"
@@ -48,7 +48,7 @@ const Contact: React.FC = () => {
             value={form.name}
             onChange={handleChange}
             required
-            className="w-full mb-3 border rounded-md px-3 py-2"
+            className="w-full mb-3 border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#ffcc80]"
           />
           <input
             type="email"
@@ -57,7 +57,7 @@ const Contact: React.FC = () => {
             value={form.email}
             onChange={handleChange}
             required
-            className="w-full mb-3 border rounded-md px-3 py-2"
+            className="w-full mb-3 border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#ffcc80]"
           />
           <textarea
             name="message"
@@ -65,12 +65,12 @@ const Contact: React.FC = () => {
             value={form.message}
             onChange={handleChange}
             required
-            className="w-full mb-3 border rounded-md px-3 py-2"
+            className="w-full mb-3 border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#ffcc80]"
             rows={4}
           />
           <button
             type="submit"
-            className="w-full bg-[#7b1113] text-yellow-100 py-2 rounded-md hover:bg-[#a0181b] transition"
+            className="w-full bg-[#ff9933] text-white py-2 rounded-md hover:bg-[#e67a00] transition"
           >
             Send Message
           </button>
