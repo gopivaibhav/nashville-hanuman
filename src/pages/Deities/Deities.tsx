@@ -1,11 +1,16 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Calendar, Gift, Sparkles, Quote } from "lucide-react";
-
+import img1 from "../../../public/ganesha.jpeg";
+import img2 from  "../../../public/hanuman.jpg";
+import img3 from "../../../public/rama.jpg";
+import img4 from "../../../public/saraswathi.jpeg";
+import img5 from "../../../public/navagraha1.webp";
+import img6 from "../../../public/images.jpeg"
 const deities = [
   {
     name: "Sri Ganesha",
-    image: "/images/deities/ganesha.jpg",
+    image: img1,
     description:
       "Son of Parvati and Siva. Remover of obstacles, worshipped first before any religious function. Associated with Siddhi (achievement), Buddhi (intellect), and Riddhi (prosperity).",
     sloka:
@@ -23,7 +28,7 @@ const deities = [
   },
   {
     name: "Sri Siva",
-    image: "/images/deities/siva.jpg",
+    image: img6,
     description:
       "One of the Hindu Trinity, Lord of destruction and regeneration. Embodies simplicity, renunciation, and auspiciousness. Also called Mruthyunjaya — the conqueror of death.",
     sloka:
@@ -41,7 +46,7 @@ const deities = [
   },
   {
     name: "Sri Saraswathi",
-    image: "/images/deities/saraswathi.jpg",
+    image: img4,
     description:
       "Goddess of learning, wisdom, and speech; dressed in white, seated on a lotus with a swan as her vehicle. Consort of Brahma, called Vaani or Shaarada.",
     sloka:
@@ -58,7 +63,7 @@ const deities = [
   },
   {
     name: "Sri Hanuman",
-    image: "/images/deities/hanuman.jpg",
+    image: img2,
     description:
       "Son of Vaayu, the Wind God. Devotee of Lord Rama. Embodies strength, courage, devotion, humility, and service.",
     sloka:
@@ -76,7 +81,7 @@ const deities = [
   },
   {
     name: "Sri Rama",
-    image: "/images/deities/rama.jpg",
+    image: img3,
     description:
       "Eighth avatar of Vishnu; embodiment of righteousness and dharma. Husband of Sita and ideal king of Ayodhya.",
     sloka:
@@ -94,7 +99,7 @@ const deities = [
   },
   {
     name: "Sri Navagrahas",
-    image: "/images/deities/navagraha.jpg",
+    image: img5,
     description:
       "Nine celestial deities representing the planets: Surya, Chandra, Mangala, Budha, Guru, Sukra, Sani, Rahu, and Ketu. They govern various aspects of life and destiny.",
     sloka:

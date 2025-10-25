@@ -1,6 +1,8 @@
 import React from "react";
 import { Utensils, Coffee, Heart, Flame } from "lucide-react";
 import { motion } from "framer-motion";
+import img1 from "../../../public/Jai_Jai_Siya_Ram.jpg";
+import img2 from "../../../public/hanuman1.jpg";
 
 const menuItems = [
   {
@@ -10,8 +12,7 @@ const menuItems = [
   },
   {
     name: "Vada & Punugulu",
-    description:
-      "Golden, crunchy favorites perfect for prasad or snack.",
+    description: "Golden, crunchy favorites perfect for prasad or snack.",
   },
   {
     name: "Rice Delights",
@@ -25,14 +26,51 @@ const menuItems = [
   },
   {
     name: "Drinks & Juices",
-    description:
-      "Refreshing fresh-made beverages for all ages.",
+    description: "Refreshing fresh-made beverages for all ages.",
   },
 ];
 
 const RamKiBandi: React.FC = () => {
   return (
     <div className="pt-24 pb-16 px-4 bg-gradient-to-b from-[#fff7e0] via-[#fff3cc] to-[#ffedb3]">
+      {/* Hero Images Section */}
+      {/* Hero Images Section */}
+<div className="flex flex-col lg:flex-row items-center justify-center gap-10 mb-16">
+  {/* Left Image */}
+  <motion.div
+    initial={{ opacity: 0, x: -40 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.6 }}
+    className="w-full lg:w-[45%] flex justify-center"
+  >
+    <div className="bg-[#ffedd5] rounded-2xl shadow-xl border border-[#facc15]/50 flex items-center justify-center p-4">
+      <img
+        src={img1}
+        alt="Lord Rama"
+        className="rounded-xl object-contain w-full h-[420px] max-h-[420px]"
+      />
+    </div>
+  </motion.div>
+
+  {/* Right Image */}
+  <motion.div
+    initial={{ opacity: 0, x: 40 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.6 }}
+    className="w-full lg:w-[45%] flex justify-center"
+  >
+    <div className="bg-[#ffedd5] rounded-2xl shadow-xl border border-[#facc15]/50 flex items-center justify-center p-4">
+      <img
+        src={img2}
+        alt="Lord Hanuman"
+        className="rounded-xl object-contain w-full h-[420px] max-h-[420px]"
+      />
+    </div>
+  </motion.div>
+</div>
+
+
+      {/* Text & Menu Section */}
       <motion.h1
         className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-[#f97316] to-[#eab308] bg-clip-text text-transparent"
         initial={{ opacity: 0, y: -20 }}
@@ -42,9 +80,10 @@ const RamKiBandi: React.FC = () => {
       </motion.h1>
 
       <p className="text-center text-[#5a1d1d] max-w-3xl mx-auto mb-10 text-lg leading-relaxed">
-        <strong className="text-[#f97316]">Ram Ki Bandi</strong> is a humble initiative to serve freshly prepared,
-        authentic Indian food to devotees and visitors. Managed by volunteers,
-        all proceeds support the temple’s service and community projects.
+        <strong className="text-[#f97316]">Ram Ki Bandi</strong> is a humble
+        initiative to serve freshly prepared, authentic Indian food to devotees
+        and visitors. Managed by volunteers, all proceeds support the temple’s
+        service and community projects.
       </p>
 
       {/* Menu Grid */}

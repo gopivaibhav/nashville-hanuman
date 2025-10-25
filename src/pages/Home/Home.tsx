@@ -16,7 +16,7 @@ const Home: React.FC = () => {
 
   return (
     
-<div className="pt-10 overflow-x-hidden relative">
+<div className="pt-14 overflow-x-hidden relative">
       
 <motion.div
   className="relative bg-gradient-to-r from-[#d97706] via-[#f59e0b] to-[#fbbf24] text-[#fff8e1] py-3 overflow-hidden border-t-2 border-b-2 border-[#fff3c4] shadow-md"

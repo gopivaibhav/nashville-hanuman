@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import classNames from "classnames";
+import img1 from "../../../public/WhatsApp Image 2025-10-22 at 18.41.21 (1).jpeg"
 
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -17,15 +18,19 @@ const Navbar: React.FC = () => {
   return (
     // 🟧 Deep saffron navbar with contrasting text
     <nav className="bg-[#ff9933] text-[#4a1c1c] shadow-md fixed w-full z-50">
-    <div className="w-full flex justify-between items-center px-4 py-3">
-
-
-        {/* Logo */}
+      <div className="w-full flex justify-between items-center px-4 py-3">
+        {/* Logo + Title */}
         <Link
           to="/"
           onClick={closeAll}
-          className="font-bold text-lg sm:text-xl text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
+          className="flex items-center gap-2 font-bold text-lg sm:text-xl text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
         >
+          {/* 🪔 Temple Logo */}
+          <img
+            src={img1} // 👉 replace with your actual logo path
+            alt="Temple Logo"
+            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover"
+          />
           Nashville Hanuman Temple
         </Link>
 
@@ -40,7 +45,6 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 items-center font-medium text-[#4a1c1c]">
-
           <li>
             <Link to="/" className="text-[#4a1c1c] transition-colors">
               Home
