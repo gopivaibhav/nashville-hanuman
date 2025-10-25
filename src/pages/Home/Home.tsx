@@ -73,6 +73,58 @@ const Home: React.FC = () => {
           Explore Our Deities
         </Link>
 
+          <motion.div
+  initial={{ scale: 0.9, opacity: 0 }}
+  animate={{ scale: 1, opacity: 1 }}
+  transition={{ duration: 1, ease: "easeOut" }}
+  className="relative z-10 flex flex-col items-center justify-center text-center mt-12"
+>
+  {/* Static ॐ Symbol */}
+  <div className="flex items-center justify-center mb-6">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 64 64"
+      className="w-20 h-20"
+    >
+      <text
+        x="50%"
+        y="50%"
+        textAnchor="middle"
+        dominantBaseline="middle"
+        fontSize="48"
+        fontWeight="bold"
+        fill="#7b1113"
+        fontFamily="'Poppins', sans-serif"
+        style={{
+          textShadow:
+            "0 0 12px rgba(123,17,19,0.3), 0 0 24px rgba(123,17,19,0.25)",
+        }}
+      >
+        ॐ
+      </text>
+    </svg>
+  </div>
+
+  {/* Coming Soon Text */}
+  <motion.h2
+    className="text-3xl sm:text-4xl font-extrabold text-[#7b1113] tracking-wide drop-shadow-md"
+    animate={{
+      textShadow: [
+        "0 0 10px #ffd54f",
+        "0 0 25px #ffb300",
+        "0 0 10px #ffd54f",
+      ],
+    }}
+    transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+  >
+    Coming Soon
+  </motion.h2>
+
+  <p className="text-[#6a1b0a] mt-3 text-lg font-medium">
+    Something divine is on its way ✨
+  </p>
+</motion.div>
+
         <img
           src="/images/deities/hanuman.jpg"
           alt="Hanuman"
