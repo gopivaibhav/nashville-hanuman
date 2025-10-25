@@ -35,19 +35,19 @@ const RamKiBandi: React.FC = () => {
     <div className="pt-24 pb-16 px-4 bg-gradient-to-b from-[#fff7e0] via-[#fff3cc] to-[#ffedb3]">
       {/* Hero Images Section */}
       {/* Hero Images Section */}
-<div className="flex flex-col lg:flex-row items-center justify-center gap-10 mb-16">
+<div className="flex flex-row flex-nowrap items-center justify-center gap-3 mb-12 overflow-x-auto">
   {/* Left Image */}
   <motion.div
     initial={{ opacity: 0, x: -40 }}
     animate={{ opacity: 1, x: 0 }}
     transition={{ duration: 0.6 }}
-    className="w-full lg:w-[45%] flex justify-center"
+    className="min-w-[160px] sm:min-w-[200px] md:min-w-[260px] flex justify-center"
   >
-    <div className="bg-[#ffedd5] rounded-2xl shadow-xl border border-[#facc15]/50 flex items-center justify-center p-4">
+    <div className="bg-[#ffedd5] rounded-2xl shadow-xl border border-[#facc15]/50 flex items-center justify-center p-3">
       <img
         src={img1}
         alt="Lord Rama"
-        className="rounded-xl object-contain w-full h-[420px] max-h-[420px]"
+        className="rounded-xl object-contain w-full h-[220px] sm:h-[320px]"
       />
     </div>
   </motion.div>
@@ -57,18 +57,17 @@ const RamKiBandi: React.FC = () => {
     initial={{ opacity: 0, x: 40 }}
     animate={{ opacity: 1, x: 0 }}
     transition={{ duration: 0.6 }}
-    className="w-full lg:w-[45%] flex justify-center"
+    className="min-w-[160px] sm:min-w-[200px] md:min-w-[260px] flex justify-center"
   >
-    <div className="bg-[#ffedd5] rounded-2xl shadow-xl border border-[#facc15]/50 flex items-center justify-center p-4">
+    <div className="bg-[#ffedd5] rounded-2xl shadow-xl border border-[#facc15]/50 flex items-center justify-center p-3">
       <img
         src={img2}
         alt="Lord Hanuman"
-        className="rounded-xl object-contain w-full h-[420px] max-h-[420px]"
+        className="rounded-xl object-contain w-full h-[220px] sm:h-[320px]"
       />
     </div>
   </motion.div>
 </div>
-
 
       {/* Text & Menu Section */}
       <motion.h1
