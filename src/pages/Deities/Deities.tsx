@@ -150,12 +150,12 @@ const Deities: React.FC = () => {
      {/* Circle with all deities */}
 <motion.div
   className="relative flex items-center justify-center"
-  style={{ width: radius * 2.5, height: radius * 2.5 }}
+  style={{ width: radius * 2.8, height: radius * 2.8 }}
   animate={{ rotate: 360 }}
   transition={{
     repeat: Infinity,
     ease: "linear",
-    duration: 60, // slow and graceful (adjust to taste)
+    duration: 60,
   }}
 >
   {positions.map((deity) => (
@@ -168,6 +168,7 @@ const Deities: React.FC = () => {
         transform: `translate(calc(-50% + ${deity.x}px), calc(-50% + ${deity.y}px))`,
       }}
     >
+      {/* 👇 Counter-rotate only the image itself */}
       <motion.img
         src={deity.image}
         alt={deity.name}
@@ -177,15 +178,16 @@ const Deities: React.FC = () => {
             ? "border-[#ff9933]"
             : "border-[#fff8e1]"
         } shadow-lg cursor-pointer object-cover bg-[#fffaf3]`}
-        style={{
-          transformOrigin: "center center", // 🧠 keeps scaling stable
+        animate={{ rotate: -360 }}
+        transition={{
+          repeat: Infinity,
+          ease: "linear",
+          duration: 60,
         }}
         whileHover={{
-          scale: 1.3,
-          rotate: 10,
+          scale: 1.25,
           boxShadow: "0 0 25px 5px #ffcc80",
         }}
-        transition={{ type: "spring", stiffness: 200, damping: 10 }}
       />
     </div>
   ))}
