@@ -150,7 +150,7 @@ const Deities: React.FC = () => {
      {/* Circle with all deities */}
 <motion.div
   className="relative flex items-center justify-center"
-  style={{ width: radius * 3.4, height: radius * 3.4 }}
+  style={{ width: radius * 3.6, height: radius * 3.6 }}
   animate={{ rotate: 360 }}
   transition={{
     repeat: Infinity,
