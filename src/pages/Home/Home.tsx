@@ -80,30 +80,27 @@ const Home: React.FC = () => {
   className="relative z-10 flex flex-col items-center justify-center text-center mt-12"
 >
   {/* Static ॐ Symbol */}
-  <div className="flex items-center justify-center mb-6">
+<div className="flex items-center justify-center mb-6">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
       className="w-20 h-20"
     >
+      <circle cx="32" cy="32" r="30" fill="#7b1113" />
       <text
         x="50%"
-        y="50%"
+        y="54%"
         textAnchor="middle"
         dominantBaseline="middle"
-        fontSize="48"
-        fontWeight="bold"
-        fill="#7b1113"
-        fontFamily="'Poppins', sans-serif"
-        style={{
-          textShadow:
-            "0 0 12px rgba(123,17,19,0.3), 0 0 24px rgba(123,17,19,0.25)",
-        }}
+        fontSize="36"
+        fill="#f8e9c9"
+        fontFamily="'Noto Serif Devanagari', serif"
       >
         ॐ
       </text>
     </svg>
   </div>
+
 
   {/* Coming Soon Text */}
   <motion.h2
