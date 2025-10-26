@@ -121,7 +121,7 @@ const Home: React.FC = () => {
   </motion.h2>
 
   <p className="text-[#6a1b0a] mt-3 text-lg font-medium">
-    Something divine is on its way ✨
+    Something divine is on its way 
   </p>
 </motion.div>
 
