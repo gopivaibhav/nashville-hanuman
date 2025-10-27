@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
           <img
             src={img1} // 👉 replace with your actual logo path
             alt="Temple Logo"
-            className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover"
+            className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover -mb-5 -mt-5"
           />
           Nashville Hanuman Temple
         </Link>
