@@ -120,8 +120,8 @@ const Deities: React.FC = () => {
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      if (width < 480) setRadius(100);
-      else if (width < 768) setRadius(130);
+      if (width < 480) setRadius(140);
+      else if (width < 768) setRadius(160);
       else setRadius(180);
     };
     handleResize();
@@ -146,7 +146,6 @@ const Deities: React.FC = () => {
         Divine Circle of Deities
       </h1>
 
-      {/* Circle with all deities */}
      {/* Circle with all deities */}
 <motion.div
   className="relative flex items-center justify-center"
@@ -173,7 +172,7 @@ const Deities: React.FC = () => {
         src={deity.image}
         alt={deity.name}
         onClick={() => setSelectedDeity(deity)}
-        className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full border-4 ${
+        className={`w-24 h-24 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-4 ${
           deity.name === "Sri Hanuman"
             ? "border-[#ff9933]"
             : "border-[#fff8e1]"
