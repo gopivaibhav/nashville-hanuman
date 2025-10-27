@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import classNames from "classnames";
-import img1 from "../../../public/WhatsApp Image 2025-10-22 at 18.41.21 (1).jpeg"
+import img1 from "../../../public/templelogo-removebg-preview.png"
 
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
