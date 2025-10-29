@@ -178,6 +178,10 @@ const Navbar: React.FC = () => {
             { label: "Halls", path: "/community/halls" },
             { label: "Ram Ki Bandi", path: "/ramkibandi" },
             { label: "Cultural", path: "/cultural" },
+          { label: "History", path: "/about/history" },
+            { label: "Founder", path: "/about/founder" },
+            { label: "Gurus", path: "/about/gurus" },
+            { label: "Volunteer", path: "/about/volunteer" },
             { label: "Donate", path: "/donate" },
             { label: "Contact", path: "/about/contact" },
           ].map((item) => (
