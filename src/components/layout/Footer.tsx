@@ -74,22 +74,23 @@ const Footer: React.FC = () => {
 
         {/* Divider + Copyright */}
          <div className="border-t border-white/40 mt-10 pt-4 text-center text-sm text-[#fff8e1]">
-          © {new Date().getFullYear()}{" "}
-          <span className="font-semibold text-white">Nashville Hanuman Temple</span>. All
-          rights reserved.
-          <br />
-          <span className="text-white text-xs mt-1 inline-block">
-            Made with ❤️ by{" "}
-            <a
-              href="https://elite8digital.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold hover:underline"
-            >
-              Elite8Digital
-            </a>
-          </span>
-        </div>
+  © {new Date().getFullYear()}{" "}
+  <span className="font-semibold text-white">Nashville Hanuman Temple</span>. All
+  rights reserved.
+  <br />
+  <span className="text-white text-xs mt-1 inline-block">
+    Made with ❤️ by{" "}
+    <a
+      href="https://elite8digital.in/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="font-semibold text-blue-500"
+    >
+      Elite8Digital
+    </a>
+  </span>
+</div>
+
       </div>
     </footer>
   );
