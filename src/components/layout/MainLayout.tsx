@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import audio from "../../../public/Shri Ram Jay Ram Jay Jay Ram - 1Hour Ram Naam Jap - Gondavalekar Maharaj _ श्री राम जय राम जय जय राम [4G7T8OPkePg].mp3";
+import audio from "../../../public/trimaudio2.mp3";
 
 
 interface LayoutProps {
