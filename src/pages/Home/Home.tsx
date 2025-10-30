@@ -58,6 +58,9 @@ const Home: React.FC = () => {
         >
           Nashville Hanuman Temple
         </motion.h1>
+         <p className="text-white drop-shadow-md font-medium">
+  A Non-Profit 501 ©️(3) Organization, Registered in the State of Tennessee
+</p>
         <motion.p
           className="max-w-2xl mx-auto text-lg mb-6"
           initial={{ opacity: 0, y: 20 }}
