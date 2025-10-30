@@ -97,8 +97,8 @@ const Donate: React.FC = () => {
             <strong>Nashville Hanuman Temple</strong>
             <br />
             Bank of Tennessee<br />
-            Routing #: 123456789<br />
-            Account #: 987654321
+            Routing #: xxxxxxxxx<br />
+            Account #: xxxxxxxxx
           </div>
 
           <div className="mt-6">
