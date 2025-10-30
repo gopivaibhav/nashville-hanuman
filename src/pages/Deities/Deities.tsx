@@ -27,7 +27,7 @@ const deities = [
       "We worship that supreme person; salutations to that Lord with a bent trunk. May that Lord with a tusk stimulate our creative faculties.",
   },
   {
-    name: "Sri Siva",
+    name: "Sri Shiva",
     image: img6,
     description:
       "One of the Hindu Trinity, Lord of destruction and regeneration. Embodies simplicity, renunciation, and auspiciousness. Also called Mruthyunjaya — the conqueror of death.",
@@ -45,7 +45,7 @@ const deities = [
       "We worship that ultimate being. Salutations to the Great Lord. May that Rudra stimulate our faculties.",
   },
   {
-    name: "Sri Saraswathi",
+    name: "Sri Saraswati",
     image: img4,
     description:
       "Goddess of learning, wisdom, and speech; dressed in white, seated on a lotus with a swan as her vehicle. Consort of Brahma, called Vaani or Shaarada.",
@@ -145,6 +145,10 @@ const Deities: React.FC = () => {
       <h1 className="text-3xl sm:text-4xl font-bold text-[#ff9933] mb-10 text-center">
         Divine Circle of Deities
       </h1>
+
+        <p className="text-center text-[#7b1113] font-medium text-sm sm:text-base mb-8">
+         Click on a deity to know more 
+      </p>
 
      {/* Circle with all deities */}
 <motion.div
