@@ -50,7 +50,7 @@ const Home: React.FC = () => {
         </motion.div>
       </motion.div>
 
-    <section className="relative text-center py-20 bg-gradient-to-br from-[#ff9933] via-[#ffa733] to-[#ffc266] text-[#4a1c1c] overflow-hidden">
+    <section className="relative text-center py-5 bg-gradient-to-br from-[#ff9933] via-[#ffa733] to-[#ffc266] text-[#4a1c1c] overflow-hidden">
       {/* Background Image */}
       <img
         src="/images/deities/hanuman.jpg"
@@ -86,7 +86,7 @@ const Home: React.FC = () => {
 
         {/* Description */}
         <motion.p
-          className="max-w-2xl mx-auto text-lg md:text-xl mb-10 leading-relaxed font-medium text-[#4a1c1c] drop-shadow-sm"
+          className="max-w-2xl mx-auto text-lg md:text-xl mb-5 leading-relaxed font-medium text-[#4a1c1c] drop-shadow-sm"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -103,7 +103,7 @@ const Home: React.FC = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="inline-block bg-yellow-300 text-[#7b1113] font-semibold px-8 py-3.5 rounded-lg shadow-lg hover:bg-yellow-400 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 mb-16"
+          className="inline-block bg-yellow-300 text-[#7b1113] font-semibold px-8 py-3.5 rounded-lg shadow-lg hover:bg-yellow-400 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 mb-8"
         >
           Explore Our Deities
         </motion.button>
@@ -116,7 +116,7 @@ const Home: React.FC = () => {
           className="relative flex flex-col items-center justify-center text-center"
         >
           {/* Om Symbol with Glow Effect */}
-          <div className="relative flex items-center justify-center mb-8">
+          <div className="relative flex items-center justify-center mb-4">
             <motion.div
               className="absolute w-28 h-28 bg-[#7b1113]/20 rounded-full blur-2xl"
               animate={{
