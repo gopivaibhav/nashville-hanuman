@@ -2,12 +2,12 @@ import React from "react";
 import {
   Building2,
   Users,
-  HeartHandshake,
   Baby,
   Sparkles,
   IndianRupee,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import img1 from "../../../public/Mother1.png";
 
 const halls = [
   {
@@ -26,7 +26,7 @@ It serves as a hub for spiritual, social, and educational activities — nurturi
   },
   {
     name: "Hanuman Hall – Celebrating Motherhood",
-    image: "/images/halls/hanuman-hall.jpg",
+    image: img1,
     description: `Hanuman Hall honors the sacred journey of motherhood.
 From baby showers and godh-bharai ceremonies to intimate family functions, it provides a serene setting filled with love and joy.`,
     features: [
@@ -50,71 +50,81 @@ const Halls: React.FC = () => {
       >
         Community Halls
       </motion.h1>
+
       <p className="text-center text-gray-700 max-w-3xl mx-auto mb-10">
         The Nashville Hanuman Temple provides modern, sacred halls for cultural,
         spiritual, and community events — designed to strengthen togetherness
         and preserve our rich heritage.
       </p>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+      {/* Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 justify-center">
         {halls.map((hall, index) => {
           const isFree = hall.type === "free";
           return (
             <motion.div
               key={index}
               whileHover={{ scale: 1.02 }}
-              className={`relative rounded-2xl overflow-hidden border ${
+              className={`relative flex flex-col rounded-2xl overflow-hidden border max-w-[500px] mx-auto ${
                 isFree
                   ? "bg-gradient-to-br from-[#fff9e6] to-[#fff3cc] border-yellow-200 shadow-[0_4px_20px_rgba(245,158,11,0.25)]"
                   : "bg-white border-[#f3d9c1] shadow-[0_4px_20px_rgba(123,17,19,0.15)]"
               }`}
             >
-              {/* Badge */}
-              <div
-                className={`absolute top-4 right-4 px-3 py-1 text-sm font-semibold rounded-full shadow ${
-                  isFree
-                    ? "bg-gradient-to-r from-[#facc15] to-[#f59e0b] text-[#5b2e00]"
-                    : "bg-gradient-to-r from-[#7b1113] to-[#a33234] text-white"
-                }`}
-              >
-                {isFree ? "Free Hall" : "Paid Hall"}
-              </div>
+            {/* Badge */}
+<div
+  className={`absolute top-4 right-4 px-3 py-1 text-sm font-semibold rounded-full shadow z-10 ${
+    isFree
+      ? "bg-gradient-to-r from-[#f7d36f] to-[#eab308] text-[#7b1113] border border-[#f5c400]"
+      : "bg-gradient-to-r from-[#7b1113] to-[#a33234] text-white"
+  }`}
+>
+  {isFree ? "Free Hall" : "Paid Hall"}
+</div>
 
-              {/* Image */}
-              <img
-                src={hall.image}
-                alt={hall.name}
-                className="w-full h-64 object-cover"
-              />
+{/* Image Section */}
+<div className="w-full flex justify-center mb-0 relative z-0">
+  <img
+    src={hall.image}
+    alt={hall.name}
+    className="w-full max-w-[500px] h-[420px] object-cover object-top rounded-2xl shadow-md"
+  />
+</div>
+
+
 
               {/* Content */}
-              <div className="p-6">
-                <div className="flex items-center mb-3">
-                  {hall.icon}
-                  <h2
-                    className={`ml-2 text-2xl font-semibold ${
-                      isFree ? "text-[#b45309]" : "text-[#7b1113]"
-                    }`}
-                  >
-                    {hall.name}
-                  </h2>
+              <div className="p-6 flex flex-col flex-grow justify-between">
+                <div>
+                  <div className="flex items-center mb-3">
+                    {hall.icon}
+                    <h2
+                      className={`ml-2 text-2xl font-semibold ${
+                        isFree ? "text-[#b45309]" : "text-[#7b1113]"
+                      }`}
+                    >
+                      {hall.name}
+                    </h2>
+                  </div>
+
+                  <p className="text-gray-700 mb-4 leading-relaxed">
+                    {hall.description}
+                  </p>
+
+                  <ul className="space-y-2">
+                    {hall.features.map((f, i) => (
+                      <li key={i} className="flex items-center text-gray-700">
+                        <Sparkles
+                          size={16}
+                          className={`mr-2 ${
+                            isFree ? "text-yellow-600" : "text-[#7b1113]"
+                          }`}
+                        />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-
-                <p className="text-gray-700 mb-4">{hall.description}</p>
-
-                <ul className="space-y-2">
-                  {hall.features.map((f, i) => (
-                    <li key={i} className="flex items-center text-gray-700">
-                      <Sparkles
-                        size={16}
-                        className={`mr-2 ${
-                          isFree ? "text-yellow-600" : "text-[#7b1113]"
-                        }`}
-                      />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
 
                 {/* Pricing Info */}
                 {!isFree && (
@@ -125,7 +135,7 @@ const Halls: React.FC = () => {
                 )}
               </div>
 
-              {/* Glow effect for Hanuman Hall */}
+              {/* Glow Effect */}
               {isFree && (
                 <motion.div
                   className="absolute inset-0 rounded-2xl border border-yellow-300 opacity-40"
