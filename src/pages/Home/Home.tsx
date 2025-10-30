@@ -282,32 +282,18 @@ const Home: React.FC = () => {
 
       {/* 🙏 Our Priest Section */}
 <section className="py-20 bg-gradient-to-b from-[#fffaf3] via-[#fffdf6] to-[#fff7ec]">
-  <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
-    {/* Priest Image */}
+  <div className="max-w-4xl mx-auto px-6 text-center">
+    {/* Priest Section */}
     <motion.div
-      className="w-full md:w-1/2"
-      initial={{ opacity: 0, x: -60 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <img
-        src="/images/priest.jpg" // ✅ Replace with actual priest image
-        alt="Temple Priest"
-        className="rounded-2xl shadow-lg border-4 border-yellow-200 object-cover w-full h-[420px]"
-      />
-    </motion.div>
-
-    {/* Priest Description */}
-    <motion.div
-      className="w-full md:w-1/2 text-left"
-      initial={{ opacity: 0, x: 60 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.8 }}
-    >
-      <h2 className="text-3xl font-bold text-[#7b1113] mb-4 font-['Playfair_Display',serif]">
+      <h2 className="text-3xl md:text-4xl font-bold text-[#7b1113] mb-6 font-['Playfair_Display',serif]">
         Our Priest
       </h2>
-      <p className="text-gray-700 leading-relaxed mb-4">
+
+      <p className="text-gray-700 leading-relaxed mb-6">
         Our Priest is a <strong>Smartha Vaidhika priest</strong> with over 20 years of experience 
         performing <em>Apasthambam</em> and <em>Veda Parayanam</em>. He is certified in 
         <strong> Krishna Yajur Veda</strong> and was born into a traditional Vaidhika Brahmin family. 
@@ -315,8 +301,8 @@ const Home: React.FC = () => {
         in Srirangam, Tiruchirappalli (Tamil Nadu) and Zaheerabad (Telangana, India).
       </p>
 
-      <div className="bg-gradient-to-br from-[#fff9e6] to-[#fff3cc] border border-yellow-200 rounded-xl shadow-inner p-5 mb-4">
-        <h3 className="text-[#b45309] font-semibold text-lg mb-2">
+      <div className="bg-gradient-to-br from-[#fff9e6] to-[#fff3cc] border border-yellow-200 rounded-xl shadow-inner p-6 mb-6 inline-block text-left mx-auto">
+        <h3 className="text-[#b45309] font-semibold text-lg mb-2 text-center">
           Trained in Vaidhika Samskaras including:
         </h3>
         <ul className="list-disc list-inside text-gray-800 space-y-1">
@@ -334,6 +320,7 @@ const Home: React.FC = () => {
     </motion.div>
   </div>
 </section>
+
 
 
       {/* 🌅 Today's Panchangam Section */}
