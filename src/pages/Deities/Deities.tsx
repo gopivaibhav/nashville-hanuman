@@ -142,7 +142,7 @@ const Deities: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#fff7e6] to-[#ffedd5] flex flex-col items-center justify-center overflow-hidden relative">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[#ff9933] mt-40 mb-5 text-center ">
+      <h1 className="text-3xl sm:text-4xl font-bold text-[#ff9933] mt-24 mb-5 text-center ">
         Divine Circle of Deities
       </h1>
 
@@ -153,7 +153,7 @@ const Deities: React.FC = () => {
      {/* Circle with all deities */}
 <motion.div
   className="relative flex items-center justify-center"
-  style={{ width: radius * 3.4, height: radius * 3.4 }}
+  style={{ width: radius * 2.8, height: radius * 2.8 }}
   animate={{ rotate: 360 }}
   transition={{
     repeat: Infinity,

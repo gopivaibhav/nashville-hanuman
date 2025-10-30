@@ -29,13 +29,13 @@ const Navbar: React.FC = () => {
         <Link
           to="/"
           onClick={closeAll}
-          className="flex items-center gap-2 font-bold text-base sm:text-lg md:text-xl text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
+          className="flex items-center font-bold text-base sm:text-lg md:text-xl text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
         >
           {/* 🪔 Temple Logo */}
           <img
             src={img1} // 👉 replace with your actual logo path
             alt="Temple Logo"
-            className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover flex-shrink-0"
+            className="w-20 -mb-5 h-20 -mt-5 sm:w-20 sm:h-20 md:w-24 md:-mb-5 md:h-24 md:-mt-5 rounded-full object-cover flex-shrink-0"
           />
           <span className="leading-tight">Nashville Hanuman Temple</span>
         </Link>
