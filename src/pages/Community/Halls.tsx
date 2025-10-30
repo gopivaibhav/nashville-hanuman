@@ -8,11 +8,12 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import img1 from "../../../public/Mother1.png";
+import img2 from "../../../public/hall.png";
 
 const halls = [
   {
     name: "Sita Ram Hall – Celebrating Memories",
-    image: "/images/halls/sita-ram-hall.jpg",
+    image: img2,
     description: `Sita Ram Hall is a warm and welcoming space for community gatherings, celebrations, and cultural programs.
 It serves as a hub for spiritual, social, and educational activities — nurturing fellowship and unity.`,
     features: [
