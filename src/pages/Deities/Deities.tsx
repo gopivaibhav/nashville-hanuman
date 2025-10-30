@@ -142,11 +142,11 @@ const Deities: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#fff7e6] to-[#ffedd5] flex flex-col items-center justify-center overflow-hidden relative">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[#ff9933] mb-10 text-center">
+      <h1 className="text-3xl sm:text-4xl font-bold text-[#ff9933] mt-40 mb-5 text-center ">
         Divine Circle of Deities
       </h1>
 
-        <p className="text-center text-[#7b1113] font-medium text-sm sm:text-base mb-8">
+        <p className="text-center text-[#7b1113] font-medium text-lg sm:text-xl mb-8">
          Click on a deity to know more 
       </p>
 

@@ -15,122 +15,167 @@ const Home: React.FC = () => {
   const [activeTab, setActiveTab] = useState("daily");
 
   return (
-    
-<div className="pt-14 overflow-x-hidden relative">
+    <div className="pt-14 overflow-x-hidden relative">
+      <motion.div
+        className="relative bg-gradient-to-r from-[#d97706] via-[#f59e0b] to-[#fbbf24] text-[#fff8e1] py-3 overflow-hidden border-t-2 border-b-2 border-[#fff3c4] shadow-md"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        {/* Subtle Shine Effect Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none"></div>
+
+        <motion.div
+          className="whitespace-nowrap text-base sm:text-lg font-semibold tracking-wide flex mt-2 sm:mt-8"
+          animate={{ x: ["100%", "-100%"] }}
+          transition={{
+            repeat: Infinity,
+            duration: 40,
+            ease: "linear",
+          }}
+        >
+          <span className="mx-12">
+            🪔{" "}
+            <span className="text-white font-bold">
+              Welcome to Nashville Hanuman Temple
+            </span>{" "}
+            — Join us daily for pujas, seva, and community prayers. Experience
+            the divine blessings of Lord Hanuman! 🙏
+          </span>
+          <span className="mx-12">
+            🌸 <span className="text-white font-bold">Upcoming:</span>{" "}
+            Navarathri – Sep 22 to Oct 31 | Diwali – Oct 20 | Karthika Masam –
+            Nov 1 to Nov 30 🌼
+          </span>
+        </motion.div>
+      </motion.div>
+
+    <section className="relative text-center py-20 bg-gradient-to-br from-[#ff9933] via-[#ffa733] to-[#ffc266] text-[#4a1c1c] overflow-hidden">
+      {/* Background Image */}
+      <img
+        src="/images/deities/hanuman.jpg"
+        alt="Hanuman"
+        className="absolute inset-0 opacity-10 w-full h-full object-cover -z-10"
+      />
       
-<motion.div
-  className="relative bg-gradient-to-r from-[#d97706] via-[#f59e0b] to-[#fbbf24] text-[#fff8e1] py-3 overflow-hidden border-t-2 border-b-2 border-[#fff3c4] shadow-md"
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ duration: 1 }}
->
-  {/* Subtle Shine Effect Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none"></div>
+      {/* Decorative Geometric Patterns */}
+      <div className="absolute top-0 left-0 w-64 h-64 border-[3px] border-white/10 rounded-full -translate-x-32 -translate-y-32"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 border-[3px] border-[#7b1113]/10 rounded-full translate-x-48 translate-y-48"></div>
+      <div className="absolute top-1/2 left-1/4 w-3 h-3 bg-white/30 rounded-full"></div>
+      <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-[#ffd54f]/40 rounded-full"></div>
 
-  
-  <motion.div
-    className="whitespace-nowrap text-base sm:text-lg font-semibold tracking-wide flex"
-    animate={{ x: ["100%", "-100%"] }}
-    transition={{
-      repeat: Infinity,
-      duration: 40, 
-      ease: "linear",
-    }}
-  >
-    <span className="mx-12">
-      🪔 <span className="text-white font-bold">Welcome to Nashville Hanuman Temple</span> — Join us daily for pujas,
-      seva, and community prayers. Experience the divine blessings of Lord Hanuman! 🙏
-    </span>
-    <span className="mx-12">
-      🌸 <span className="text-white font-bold">Upcoming:</span> Navarathri – Sep 22 to Oct 31 |
-      Diwali – Oct 20 | Karthika Masam – Nov 1 to Nov 30 🌼
-    </span>
-  </motion.div>
-</motion.div>
-
-
-
-      <section className="relative text-center py-20 bg-gradient-to-br from-[#ff9933] via-[#ffa733] to-[#ffc266] text-[#4a1c1c]">
+      <div className="relative z-10 max-w-5xl mx-auto px-4">
+        {/* Title */}
         <motion.h1
-          className="text-4xl md:text-5xl text-[#7b1113] font-bold mb-4"
+          className="text-4xl md:text-6xl text-[#7b1113] font-bold mb-3 drop-shadow-lg"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
         >
           Nashville Hanuman Temple
         </motion.h1>
-         <p className="text-white drop-shadow-md font-medium">
-  A Non-Profit 501 ©️(3) Organization, Registered in the State of Tennessee
-</p>
+
+        {/* Subtitle with decorative line */}
+        <div className="flex items-center justify-center gap-4 mb-8">
+          <div className="h-[2px] w-12 bg-white/60"></div>
+          <p className="text-white drop-shadow-md font-semibold text-sm md:text-base tracking-wide">
+            A Non-Profit 501(c)(3) Organization, Registered in the State of Tennessee
+          </p>
+          <div className="h-[2px] w-12 bg-white/60"></div>
+        </div>
+
+        {/* Description */}
         <motion.p
-          className="max-w-2xl mx-auto text-lg mb-6"
+          className="max-w-2xl mx-auto text-lg md:text-xl mb-10 leading-relaxed font-medium text-[#4a1c1c] drop-shadow-sm"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
           A sacred home where devotion, knowledge, and unity come together under
           the grace of Lord Hanuman.
         </motion.p>
-        <Link
-          to="/deities"
-          className="inline-block bg-yellow-300 text-[#7b1113] font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-yellow-400 transition"
+
+        {/* CTA Button */}
+        <motion.button
+        onClick={() => {
+          window.location.href = '/deities';
+        }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="inline-block bg-yellow-300 text-[#7b1113] font-semibold px-8 py-3.5 rounded-lg shadow-lg hover:bg-yellow-400 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 mb-16"
         >
           Explore Our Deities
-        </Link>
+        </motion.button>
 
-          <motion.div
-  initial={{ scale: 0.9, opacity: 0 }}
-  animate={{ scale: 1, opacity: 1 }}
-  transition={{ duration: 1, ease: "easeOut" }}
-  className="relative z-10 flex flex-col items-center justify-center text-center mt-12"
->
-  {/* Static ॐ Symbol */}
-<div className="flex items-center justify-center mb-6">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 64 64"
-      className="w-20 h-20"
-    >
-      <circle cx="32" cy="32" r="30" fill="#7b1113" />
-      <text
-        x="50%"
-        y="54%"
-        textAnchor="middle"
-        dominantBaseline="middle"
-        fontSize="36"
-        fill="#f8e9c9"
-        fontFamily="'Noto Serif Devanagari', serif"
-      >
-        ॐ
-      </text>
-    </svg>
-  </div>
+        {/* Coming Soon Section */}
+        <motion.div
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+          className="relative flex flex-col items-center justify-center text-center"
+        >
+          {/* Om Symbol with Glow Effect */}
+          <div className="relative flex items-center justify-center mb-8">
+            <motion.div
+              className="absolute w-28 h-28 bg-[#7b1113]/20 rounded-full blur-2xl"
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.3, 0.5, 0.3],
+              }}
+              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+            ></motion.div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 64 64"
+              className="w-20 h-20 relative z-10 drop-shadow-2xl"
+            >
+              <circle cx="32" cy="32" r="30" fill="#7b1113" />
+              <circle cx="32" cy="32" r="28" fill="none" stroke="#ffd54f" strokeWidth="1.5" opacity="0.4" />
+              <text
+                x="50%"
+                y="54%"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fontSize="36"
+                fill="#f8e9c9"
+                fontFamily="'Noto Serif Devanagari', serif"
+              >
+                ॐ
+              </text>
+            </svg>
+          </div>
 
+          {/* Coming Soon Text with Enhanced Glow */}
+          <div className="relative inline-block">
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-[#ffd54f]/0 via-[#ffb300]/30 to-[#ffd54f]/0 blur-xl"
+              animate={{
+                opacity: [0.4, 0.7, 0.4],
+              }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+            ></motion.div>
+            <motion.h2
+              className="relative text-4xl sm:text-5xl font-extrabold text-[#7b1113] tracking-wide drop-shadow-md"
+              animate={{
+                textShadow: [
+                  "0 0 10px #ffd54f",
+                  "0 0 25px #ffb300",
+                  "0 0 10px #ffd54f",
+                ],
+              }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+            >
+              Coming Soon
+            </motion.h2>
+          </div>
 
-  {/* Coming Soon Text */}
-  <motion.h2
-    className="text-3xl sm:text-4xl font-extrabold text-[#7b1113] tracking-wide drop-shadow-md"
-    animate={{
-      textShadow: [
-        "0 0 10px #ffd54f",
-        "0 0 25px #ffb300",
-        "0 0 10px #ffd54f",
-      ],
-    }}
-    transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-  >
-    Coming Soon
-  </motion.h2>
-
-  <p className="text-[#6a1b0a] mt-3 text-lg font-medium">
-    Something divine is on its way 
-  </p>
-</motion.div>
-
-        <img
-          src="/images/deities/hanuman.jpg"
-          alt="Hanuman"
-          className="absolute inset-0 opacity-10 w-full h-full object-cover -z-10"
-        />
-      </section>
+          <p className="text-[#6a1b0a] mt-4 text-lg font-medium drop-shadow-sm">
+            Something divine is on its way
+          </p>
+        </motion.div>
+      </div>
+    </section>
 
       {/* 🕉️ Vision & Mission */}
       <section className="py-16 bg-[#fffdf6] text-center">
@@ -171,11 +216,31 @@ const Home: React.FC = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto px-6">
           {[
             { to: "/deities", label: "Deities", icon: <Flame size={28} /> },
-            { to: "/religious/puja-schedule", label: "Puja Schedule", icon: <Calendar size={28} /> },
-            { to: "/education/hvs", label: "HVS School", icon: <BookOpen size={28} /> },
-            { to: "/community/halls", label: "Halls", icon: <Landmark size={28} /> },
-            { to: "/ramkibandi", label: "Ram Ki Bandi", icon: <Heart size={28} /> },
-            { to: "/cultural", label: "Cultural", icon: <Sparkles size={28} /> },
+            {
+              to: "/religious/puja-schedule",
+              label: "Puja Schedule",
+              icon: <Calendar size={28} />,
+            },
+            {
+              to: "/education/hvs",
+              label: "HVS School",
+              icon: <BookOpen size={28} />,
+            },
+            {
+              to: "/community/halls",
+              label: "Halls",
+              icon: <Landmark size={28} />,
+            },
+            {
+              to: "/ramkibandi",
+              label: "Ram Ki Bandi",
+              icon: <Heart size={28} />,
+            },
+            {
+              to: "/cultural",
+              label: "Cultural",
+              icon: <Sparkles size={28} />,
+            },
           ].map((item, i) => (
             <Link
               key={i}
@@ -261,17 +326,30 @@ const Home: React.FC = () => {
             <h2 className="text-3xl font-bold text-[#7b1113] mb-4">
               Our Founder
             </h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
-  In the year 2021, the divine journey of our temple began with the sacred vision received by our Founder in Bharat (India) — a calling that his son should serve the community and spread the light of devotion. Guided by the grace of Lord Hanuman, this humble vision gave birth to Hanuman Vayu Sena (HVS).
-</p>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              In the year 2021, the divine journey of our temple began with the
+              sacred vision received by our Founder in Bharat (India) — a
+              calling that his son should serve the community and spread the
+              light of devotion. Guided by the grace of Lord Hanuman, this
+              humble vision gave birth to Hanuman Vayu Sena (HVS).
+            </p>
 
-<p className="text-gray-700 leading-relaxed mb-4">
-  Over time, hearts across Tennessee were touched by this divine mission. What started as a spark of faith soon became a united movement of love and service. Together, devotees joined hands to create a holy abode for Lord Hanuman — a space filled with <em>bhakti</em>, <em>seva</em>, and blessings for all. Thus, <strong>Nashville Hanuman</strong>, a Non-Profit 501 ©️(3) Organization, was established.
-</p>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Over time, hearts across Tennessee were touched by this divine
+              mission. What started as a spark of faith soon became a united
+              movement of love and service. Together, devotees joined hands to
+              create a holy abode for Lord Hanuman — a space filled with{" "}
+              <em>bhakti</em>, <em>seva</em>, and blessings for all. Thus,{" "}
+              <strong>Nashville Hanuman</strong>, a Non-Profit 501 ©️(3)
+              Organization, was established.
+            </p>
 
-<p className="text-gray-700 leading-relaxed">
-  Today, the Founder’s vision continues to inspire hundreds to walk the path of devotion — to serve selflessly, to chant <strong>“JAI SHRI RAM”</strong>, and to keep His divine presence alive in our lives and community.
-</p>
+            <p className="text-gray-700 leading-relaxed">
+              Today, the Founder’s vision continues to inspire hundreds to walk
+              the path of devotion — to serve selflessly, to chant{" "}
+              <strong>“JAI SHRI RAM”</strong>, and to keep His divine presence
+              alive in our lives and community.
+            </p>
 
             <p className="text-gray-700 italic">
               “Faith is the foundation, and service is the path.”
@@ -281,184 +359,238 @@ const Home: React.FC = () => {
       </section>
 
       {/* 🙏 Our Priest Section */}
-<section className="py-20 bg-gradient-to-b from-[#fffaf3] via-[#fffdf6] to-[#fff7ec]">
-  <div className="max-w-4xl mx-auto px-6 text-center">
-    {/* Priest Section */}
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-    >
-      <h2 className="text-3xl md:text-4xl font-bold text-[#7b1113] mb-6 font-['Playfair_Display',serif]">
-        Our Priest
-      </h2>
+      <section className="py-20 bg-gradient-to-b from-[#fffaf3] via-[#fffdf6] to-[#fff7ec]">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          {/* Priest Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-[#7b1113] mb-6 font-['Playfair_Display',serif]">
+              Our Priest
+            </h2>
 
-      <p className="text-gray-700 leading-relaxed mb-6">
-        Our Priest is a <strong>Smartha Vaidhika priest</strong> with over 20 years of experience 
-        performing <em>Apasthambam</em> and <em>Veda Parayanam</em>. He is certified in 
-        <strong> Krishna Yajur Veda</strong> and was born into a traditional Vaidhika Brahmin family. 
-        He studied under <strong>Shivram Maharaj Dixit</strong> & <strong>Ganesh Maharaj Dixit</strong> 
-        in Srirangam, Tiruchirappalli (Tamil Nadu) and Zaheerabad (Telangana, India).
-      </p>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              Our Priest is a <strong>Smartha Vaidhika priest</strong> with over
+              20 years of experience performing <em>Apasthambam</em> and{" "}
+              <em>Veda Parayanam</em>. He is certified in
+              <strong> Krishna Yajur Veda</strong> and was born into a
+              traditional Vaidhika Brahmin family. He studied under{" "}
+              <strong>Shivram Maharaj Dixit</strong> &{" "}
+              <strong>Ganesh Maharaj Dixit</strong>
+              in Srirangam, Tiruchirappalli (Tamil Nadu) and Zaheerabad
+              (Telangana, India).
+            </p>
 
-      <div className="bg-gradient-to-br from-[#fff9e6] to-[#fff3cc] border border-yellow-200 rounded-xl shadow-inner p-6 mb-6 inline-block text-left mx-auto">
-        <h3 className="text-[#b45309] font-semibold text-lg mb-2 text-center">
-          Trained in Vaidhika Samskaras including:
-        </h3>
-        <ul className="list-disc list-inside text-gray-800 space-y-1">
-          <li>Marriage Ceremonies</li>
-          <li>Gruhapravesam (rituals for moving into a new home)</li>
-          <li>Satyanarayana Vratham</li>
-          <li>Rudra Abhishekam and Homam</li>
-        </ul>
-      </div>
+            <div className="bg-gradient-to-br from-[#fff9e6] to-[#fff3cc] border border-yellow-200 rounded-xl shadow-inner p-6 mb-6 inline-block text-left mx-auto">
+              <h3 className="text-[#b45309] font-semibold text-lg mb-2 text-center">
+                Trained in Vaidhika Samskaras including:
+              </h3>
+              <ul className="list-disc list-inside text-gray-800 space-y-1">
+                <li>Marriage Ceremonies</li>
+                <li>Gruhapravesam (rituals for moving into a new home)</li>
+                <li>Satyanarayana Vratham</li>
+                <li>Rudra Abhishekam and Homam</li>
+              </ul>
+            </div>
 
-      <p className="text-gray-700 leading-relaxed">
-        He is multilingual, speaking <strong>Hindi, Kannada, Telugu, English</strong>, 
-        and has an understanding of <strong>Marathi</strong>.
-      </p>
-    </motion.div>
-  </div>
-</section>
-
-
+            <p className="text-gray-700 leading-relaxed">
+              He is multilingual, speaking{" "}
+              <strong>Hindi, Kannada, Telugu, English</strong>, and has an
+              understanding of <strong>Marathi</strong>.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
       {/* 🌅 Today's Panchangam Section */}
       {/* (Your full Panchangam code remains here as-is, unchanged) */}
 
       {/* 🌅 Today's Panchangam Section */}
-<section className="py-16 bg-[#fffaf3] text-center relative overflow-hidden">
-  <h2 className="text-3xl font-bold text-[#ff9933] mb-10 relative">
-    Today’s Panchangam
-    <div className="w-24 h-1 bg-yellow-400 mx-auto mt-2 rounded-full"></div>
-  </h2>
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
-    {/* 🪔 Special Events */}
-    <div className="bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden">
-      <div className="bg-[#7b1113] text-[#ff9933] font-semibold py-2 uppercase tracking-wide">
-        Special Events
-      </div>
-      <div className="bg-[url('/images/pattern-light.png')] bg-opacity-5 bg-cover bg-center p-5 text-left text-gray-800">
-        {[
-          { title: "Navagraha and Nagadevi Prathista", date: "Mar 08 – Oct 31" },
-          { title: "Navarathri – 2025", date: "Sep 22 – Oct 31" },
-          { title: "Diwali Celebrations – 2025", date: "Oct 20" },
-          { title: "Karthika Masam – 2025", date: "Nov 01 – Nov 30" },
-        ].map((item, i) => (
-          <div key={i} className="border-b border-yellow-100 py-3 last:border-none">
-            <h3 className="text-[#ff9933] font-semibold text-lg">
-              {item.title}
-            </h3>
-            <p className="text-sm text-gray-600">{item.date}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-    {/* 🕉️ Temple Schedules */}
-    <div className="bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden">
-      <div className="bg-[#7b1113] text-[#ff9933] font-semibold py-2 uppercase tracking-wide">
-        Temple Schedules
-      </div>
-      <div className="flex justify-center space-x-2 mt-3">
-        {["daily", "weekly", "monthly"].map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            // FIX: Template literal was missing the surrounding backticks (`...`)
-            className={`px-4 py-1 rounded-t-md text-sm font-medium border transition ${
-              activeTab === tab
-                ? "bg-[#7b1113] text-[#ff9933] border-[#7b1113]"
-                : "bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200"
-            }`}
-          >
-            {tab.toUpperCase()}
-          </button>
-        ))}
-      </div>
-      <div className="bg-[url('/images/pattern-light.png')] bg-opacity-5 bg-cover bg-center text-left text-gray-800 p-5 space-y-4">
-        {activeTab === "daily" && (
-          <>
-            <div className="border-b border-yellow-100 pb-2">
-              <p className="font-semibold text-[#ff9933]">Temple Opens</p>
-              <p className="text-sm text-gray-700">9:00 AM</p>
+      <section className="py-16 bg-[#fffaf3] text-center relative overflow-hidden">
+        <h2 className="text-3xl font-bold text-[#ff9933] mb-10 relative">
+          Today’s Panchangam
+          <div className="w-24 h-1 bg-yellow-400 mx-auto mt-2 rounded-full"></div>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
+          {/* 🪔 Special Events */}
+          <div className="bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden">
+            <div className="bg-[#7b1113] text-[#ff9933] font-semibold py-2 uppercase tracking-wide">
+              Special Events
             </div>
-            <div className="border-b border-yellow-100 pb-2">
-              <p className="font-semibold text-[#ff9933]">Rudrabhishekam</p>
-              <p className="text-sm text-gray-700">7:00 AM – 8:00 AM</p>
-            </div>
-            <div className="border-b border-yellow-100 pb-2">
-              <p className="font-semibold text-[#ff9933]">Evening Aarati</p>
-              <p className="text-sm text-gray-700">7:30 PM</p>
-            </div>
-            <div>
-              <p className="font-semibold text-[#ff9933]">Temple Closes</p>
-              <p className="text-sm text-gray-700">9:00 PM</p>
-            </div>
-          </>
-        )}
-        {activeTab === "weekly" && (
-          <>
-            <p className="font-semibold text-[#ff9933]">Hanuman Abhishekam – Tuesday</p>
-            <p className="font-semibold text-[#ff9933]">Siva Abhishekam – Thursday</p>
-            <p className="font-semibold text-[#ff9933]">Saraswathi Abhishekam – Friday</p>
-            <p className="font-semibold text-[#ff9933]">Rama Abhishekam – Saturday</p>
-          </>
-        )}
-        {activeTab === "monthly" && (
-          <>
-            <p className="font-semibold text-[#ff9933]">Pournami Puja – Every Full Moon</p>
-            <p className="font-semibold text-[#ff9933]">Amavasya Puja – Every New Moon</p>
-            <p className="font-semibold text-[#ff9933]">Sankatahara Chathurthi – Monthly</p>
-          </>
-        )}
-      </div>
-    </div>
-    {/* 🎉 Upcoming Events */}
-    <div className="bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden">
-      <div className="bg-[#7b1113] text-[#ff9933] font-semibold py-2 uppercase tracking-wide">
-        Upcoming Events
-      </div>
-      <div className="bg-[url('/images/pattern-light.png')] bg-opacity-5 bg-cover bg-center p-5 text-left text-gray-800 space-y-4">
-        {[
-          { img: "/images/deities/hanuman.jpg", title: "Navagraha and Nagadevi Prathista", date: "Mar 08 – Dec 31" },
-          { img: "/images/deities/siva.jpg", title: "Navarathri – 2025", date: "Sep 22 – Oct 31" },
-          { img: "/images/deities/saraswathi.jpg", title: "Diwali Celebrations – 2025", date: "Oct 20" },
-          { img: "/images/deities/rama.jpg", title: "Karthika Masam – 2025", date: "Nov 01 – Nov 30" },
-        ].map((event, i) => (
-          <div key={i} className="flex items-center space-x-4 border-b border-yellow-100 pb-3 last:border-none">
-            <img src={event.img} alt={event.title} className="w-12 h-12 rounded-md object-cover border border-yellow-200" />
-            <div>
-              <h3 className="text-[#ff9933] font-semibold text-sm">{event.title}</h3>
-              <p className="text-xs text-gray-600">{event.date}</p>
+            <div className="bg-[url('/images/pattern-light.png')] bg-opacity-5 bg-cover bg-center p-5 text-left text-gray-800">
+              {[
+                {
+                  title: "Navagraha and Nagadevi Prathista",
+                  date: "Mar 08 – Oct 31",
+                },
+                { title: "Navarathri – 2025", date: "Sep 22 – Oct 31" },
+                { title: "Diwali Celebrations – 2025", date: "Oct 20" },
+                { title: "Karthika Masam – 2025", date: "Nov 01 – Nov 30" },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="border-b border-yellow-100 py-3 last:border-none"
+                >
+                  <h3 className="text-[#ff9933] font-semibold text-lg">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-gray-600">{item.date}</p>
+                </div>
+              ))}
             </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
+          {/* 🕉️ Temple Schedules */}
+          <div className="bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden">
+            <div className="bg-[#7b1113] text-[#ff9933] font-semibold py-2 uppercase tracking-wide">
+              Temple Schedules
+            </div>
+            <div className="flex justify-center space-x-2 mt-3">
+              {["daily", "weekly", "monthly"].map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  // FIX: Template literal was missing the surrounding backticks (`...`)
+                  className={`px-4 py-1 rounded-t-md text-sm font-medium border transition ${
+                    activeTab === tab
+                      ? "bg-[#7b1113] text-[#ff9933] border-[#7b1113]"
+                      : "bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200"
+                  }`}
+                >
+                  {tab.toUpperCase()}
+                </button>
+              ))}
+            </div>
+            <div className="bg-[url('/images/pattern-light.png')] bg-opacity-5 bg-cover bg-center text-left text-gray-800 p-5 space-y-4">
+              {activeTab === "daily" && (
+                <>
+                  <div className="border-b border-yellow-100 pb-2">
+                    <p className="font-semibold text-[#ff9933]">Temple Opens</p>
+                    <p className="text-sm text-gray-700">9:00 AM</p>
+                  </div>
+                  <div className="border-b border-yellow-100 pb-2">
+                    <p className="font-semibold text-[#ff9933]">
+                      Rudrabhishekam
+                    </p>
+                    <p className="text-sm text-gray-700">7:00 AM – 8:00 AM</p>
+                  </div>
+                  <div className="border-b border-yellow-100 pb-2">
+                    <p className="font-semibold text-[#ff9933]">
+                      Evening Aarati
+                    </p>
+                    <p className="text-sm text-gray-700">7:30 PM</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-[#ff9933]">
+                      Temple Closes
+                    </p>
+                    <p className="text-sm text-gray-700">9:00 PM</p>
+                  </div>
+                </>
+              )}
+              {activeTab === "weekly" && (
+                <>
+                  <p className="font-semibold text-[#ff9933]">
+                    Hanuman Abhishekam – Tuesday
+                  </p>
+                  <p className="font-semibold text-[#ff9933]">
+                    Siva Abhishekam – Thursday
+                  </p>
+                  <p className="font-semibold text-[#ff9933]">
+                    Saraswathi Abhishekam – Friday
+                  </p>
+                  <p className="font-semibold text-[#ff9933]">
+                    Rama Abhishekam – Saturday
+                  </p>
+                </>
+              )}
+              {activeTab === "monthly" && (
+                <>
+                  <p className="font-semibold text-[#ff9933]">
+                    Pournami Puja – Every Full Moon
+                  </p>
+                  <p className="font-semibold text-[#ff9933]">
+                    Amavasya Puja – Every New Moon
+                  </p>
+                  <p className="font-semibold text-[#ff9933]">
+                    Sankatahara Chathurthi – Monthly
+                  </p>
+                </>
+              )}
+            </div>
+          </div>
+          {/* 🎉 Upcoming Events */}
+          <div className="bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden">
+            <div className="bg-[#7b1113] text-[#ff9933] font-semibold py-2 uppercase tracking-wide">
+              Upcoming Events
+            </div>
+            <div className="bg-[url('/images/pattern-light.png')] bg-opacity-5 bg-cover bg-center p-5 text-left text-gray-800 space-y-4">
+              {[
+                {
+                  img: "/images/deities/hanuman.jpg",
+                  title: "Navagraha and Nagadevi Prathista",
+                  date: "Mar 08 – Dec 31",
+                },
+                {
+                  img: "/images/deities/siva.jpg",
+                  title: "Navarathri – 2025",
+                  date: "Sep 22 – Oct 31",
+                },
+                {
+                  img: "/images/deities/saraswathi.jpg",
+                  title: "Diwali Celebrations – 2025",
+                  date: "Oct 20",
+                },
+                {
+                  img: "/images/deities/rama.jpg",
+                  title: "Karthika Masam – 2025",
+                  date: "Nov 01 – Nov 30",
+                },
+              ].map((event, i) => (
+                <div
+                  key={i}
+                  className="flex items-center space-x-4 border-b border-yellow-100 pb-3 last:border-none"
+                >
+                  <img
+                    src={event.img}
+                    alt={event.title}
+                    className="w-12 h-12 rounded-md object-cover border border-yellow-200"
+                  />
+                  <div>
+                    <h3 className="text-[#ff9933] font-semibold text-sm">
+                      {event.title}
+                    </h3>
+                    <p className="text-xs text-gray-600">{event.date}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* 🛕 Visit Temple CTA */}
-     <section className="py-16 bg-[#ff9933] text-white text-center">
-  <motion.h2
-    className="text-3xl text-white font-bold mb-4"
-    initial={{ opacity: 0, y: -10 }}
-    whileInView={{ opacity: 1, y: 0 }}
-  >
-    Visit the Temple
-  </motion.h2>
-  <p className="max-w-2xl mx-auto text-lg mb-6 text-[#fff8e1]">
-    Join us for daily pujas, festivals, and community gatherings.  
-    Experience the divine grace of Lord Hanuman and our beautiful temple atmosphere.
-  </p>
-  <Link
-    to="/about/contact"
-    className="inline-block bg-white text-[#ff9933] font-semibold px-6 py-3 rounded-lg hover:bg-[#fff4e6] transition"
-  >
-    Get Directions
-  </Link>
-</section>
-
+      <section className="py-16 bg-[#ff9933] text-white text-center">
+        <motion.h2
+          className="text-3xl text-white font-bold mb-4"
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+        >
+          Visit the Temple
+        </motion.h2>
+        <p className="max-w-2xl mx-auto text-lg mb-6 text-[#fff8e1]">
+          Join us for daily pujas, festivals, and community gatherings.
+          Experience the divine grace of Lord Hanuman and our beautiful temple
+          atmosphere.
+        </p>
+        <Link
+          to="/about/contact"
+          className="inline-block bg-white text-[#ff9933] font-semibold px-6 py-3 rounded-lg hover:bg-[#fff4e6] transition"
+        >
+          Get Directions
+        </Link>
+      </section>
     </div>
   );
 };

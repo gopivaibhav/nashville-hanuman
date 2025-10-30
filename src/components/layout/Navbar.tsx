@@ -2,17 +2,23 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import classNames from "classnames";
-import img1 from "../../../public/templelogo-removebg-preview.png"
+import img1 from "../../../public/templelogo-removebg-preview.png";
 
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
 
   const toggleMenu = () => setOpen((prev) => !prev);
 
   const closeAll = () => {
     setOpen(false);
     setActiveDropdown(null);
+    setMobileDropdown(null);
+  };
+
+  const toggleMobileDropdown = (name: string) => {
+    setMobileDropdown(mobileDropdown === name ? null : name);
   };
 
   return (
@@ -23,15 +29,15 @@ const Navbar: React.FC = () => {
         <Link
           to="/"
           onClick={closeAll}
-          className="flex items-center gap-2 font-bold text-lg sm:text-xl text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
+          className="flex items-center gap-2 font-bold text-base sm:text-lg md:text-xl text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
         >
           {/* 🪔 Temple Logo */}
           <img
             src={img1} // 👉 replace with your actual logo path
             alt="Temple Logo"
-            className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover -mb-5 -mt-5"
+            className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover flex-shrink-0"
           />
-          Nashville Hanuman Temple
+          <span className="leading-tight">Nashville Hanuman Temple</span>
         </Link>
 
         {/* Hamburger Icon */}
@@ -46,13 +52,13 @@ const Navbar: React.FC = () => {
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 items-center font-medium text-[#4a1c1c]">
           <li>
-            <Link to="/" className="text-[#4a1c1c] transition-colors">
+            <Link to="/" className="hover:text-[#fff4e6] text-[#4a1c1c] transition-colors">
               Home
             </Link>
           </li>
 
           <li>
-            <Link to="/deities" className="text-[#4a1c1c] transition-colors">
+            <Link to="/deities" className="hover:text-[#fff4e6] text-[#4a1c1c] transition-colors">
               Deities
             </Link>
           </li>
@@ -77,7 +83,7 @@ const Navbar: React.FC = () => {
               {[
                 { label: "Puja Schedule", path: "/religious/puja-schedule" },
                 { label: "Festivals", path: "/religious/festivals" },
-               // { label: "Priests", path: "/religious/priests" },
+                // { label: "Priests", path: "/religious/priests" },
               ].map((item) => (
                 <li key={item.path}>
                   <Link
@@ -93,25 +99,25 @@ const Navbar: React.FC = () => {
           </li>
 
           <li>
-            <Link to="/education/hvs" className="text-[#4a1c1c] transition-colors">
+            <Link to="/education/hvs" className="text-[#4a1c1c] hover:text-[#fff4e6] transition-colors">
               Education
             </Link>
           </li>
 
           <li>
-            <Link to="/community/halls" className="text-[#4a1c1c] transition-colors">
+            <Link to="/community/halls" className="text-[#4a1c1c] hover:text-[#fff4e6] transition-colors">
               Halls
             </Link>
           </li>
 
           <li>
-            <Link to="/ramkibandi" className="text-[#4a1c1c] transition-colors">
+            <Link to="/ramkibandi" className="text-[#4a1c1c] hover:text-[#fff4e6] transition-colors">
               Ram Ki Bandi
             </Link>
           </li>
 
           <li>
-            <Link to="/cultural" className="text-[#4a1c1c] transition-colors">
+            <Link to="/cultural" className="text-[#4a1c1c] hover:text-[#fff4e6] transition-colors">
               Cultural
             </Link>
           </li>
@@ -167,33 +173,160 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden bg-[#ff9933] px-6 pb-4 space-y-3 text-[#4a1c1c] font-medium">
-          {[
-            { label: "Home", path: "/" },
-            { label: "Deities", path: "/deities" },
-            { label: "Puja Schedule", path: "/religious/puja-schedule" },
-            { label: "Festivals", path: "/religious/festivals" },
-           // { label: "Priests", path: "/religious/priests" },
-            { label: "Education", path: "/education/hvs" },
-            { label: "Halls", path: "/community/halls" },
-            { label: "Ram Ki Bandi", path: "/ramkibandi" },
-            { label: "Cultural", path: "/cultural" },
-          { label: "History", path: "/about/history" },
-            { label: "Founder", path: "/about/founder" },
-            { label: "Gurus", path: "/about/gurus" },
-            { label: "Volunteer", path: "/about/volunteer" },
-            { label: "Donate", path: "/donate" },
-            { label: "Contact", path: "/about/contact" },
-          ].map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              onClick={closeAll}
-              className="block text-[#4a1c1c] transition-colors"
+        <div className="md:hidden bg-[#ff9933] px-6 pb-4 space-y-2 text-[#4a1c1c] font-medium">
+          <Link
+            to="/"
+            onClick={closeAll}
+            className="block py-2 text-[#4a1c1c]  hover:text-[#fff4e6] transition-colors"
+          >
+            Home
+          </Link>
+
+          <Link
+            to="/deities"
+            onClick={closeAll}
+            className="block py-2 text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
+          >
+            Deities
+          </Link>
+
+          {/* Mobile Religious Dropdown */}
+          <div>
+            <button
+              onClick={() => toggleMobileDropdown("religious")}
+              className="flex items-center justify-between w-full py-2 text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
             >
-              {item.label}
-            </Link>
-          ))}
+              Religious
+              <ChevronDown
+                size={16}
+                className={classNames(
+                  "transition-transform",
+                  mobileDropdown === "religious" && "rotate-180"
+                )}
+              />
+            </button>
+            {mobileDropdown === "religious" && (
+              <div className="pl-4 space-y-1 mt-1">
+                <Link
+                  to="/religious/puja-schedule"
+                  onClick={closeAll}
+                  className="block py-2 text-sm text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
+                >
+                  Puja Schedule
+                </Link>
+                <Link
+                  to="/religious/festivals"
+                  onClick={closeAll}
+                  className="block py-2 text-sm text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
+                >
+                  Festivals
+                </Link>
+                {/* <Link
+                  to="/religious/priests"
+                  onClick={closeAll}
+                  className="block py-2 text-sm hover:text-[#fff4e6] transition-colors"
+                >
+                  Priests
+                </Link> */}
+              </div>
+            )}
+          </div>
+
+          <Link
+            to="/education/hvs"
+            onClick={closeAll}
+            className="block py-2 text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
+          >
+            Education
+          </Link>
+
+          <Link
+            to="/community/halls"
+            onClick={closeAll}
+            className="block py-2 text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
+          >
+            Halls
+          </Link>
+
+          <Link
+            to="/ramkibandi"
+            onClick={closeAll}
+            className="block py-2 text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
+          >
+            Ram Ki Bandi
+          </Link>
+
+          <Link
+            to="/cultural"
+            onClick={closeAll}
+            className="block py-2 text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
+          >
+            Cultural
+          </Link>
+
+          {/* Mobile About Dropdown */}
+          <div>
+            <button
+              onClick={() => toggleMobileDropdown("about")}
+              className="flex items-center justify-between w-full py-2 hover:text-[#fff4e6] transition-colors"
+            >
+              About
+              <ChevronDown
+                size={16}
+                className={classNames(
+                  "transition-transform",
+                  mobileDropdown === "about" && "rotate-180"
+                )}
+              />
+            </button>
+            {mobileDropdown === "about" && (
+              <div className="pl-4 space-y-1 mt-1">
+                <Link
+                  to="/about/history"
+                  onClick={closeAll}
+                  className="block py-2 text-sm text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
+                >
+                  History
+                </Link>
+                <Link
+                  to="/about/founder"
+                  onClick={closeAll}
+                  className="block py-2 text-sm text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
+                >
+                  Founder
+                </Link>
+                <Link
+                  to="/about/gurus"
+                  onClick={closeAll}
+                  className="block py-2 text-sm text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
+                >
+                  Gurus
+                </Link>
+                <Link
+                  to="/about/volunteer"
+                  onClick={closeAll}
+                  className="block py-2 text-sm text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
+                >
+                  Volunteer
+                </Link>
+                <Link
+                  to="/about/contact"
+                  onClick={closeAll}
+                  className="block py-2 text-sm text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
+                >
+                  Contact
+                </Link>
+              </div>
+            )}
+          </div>
+
+          <Link
+            to="/donate"
+            onClick={closeAll}
+            className="block py-2 bg-white text-[#ff9933] px-4 rounded-md font-semibold hover:bg-[#fff4e6] transition text-center mt-3"
+          >
+            Donate
+          </Link>
         </div>
       )}
     </nav>
