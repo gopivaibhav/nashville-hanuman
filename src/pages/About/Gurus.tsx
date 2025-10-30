@@ -31,13 +31,13 @@ const Gurus: React.FC = () => {
             className="relative group flex flex-col items-center text-center"
           >
             {/* Circular Image */}
-            <div className="w-48 h-48 sm:w-52 sm:h-52 rounded-full overflow-hidden border-[5px] border-[#ffcc80] shadow-lg group-hover:shadow-2xl transition-all duration-300">
-              <img
-                src={image}
-                alt={`Guru ${i + 1}`}
-                className="w-full h-full object-cover rounded-full"
-              />
-            </div>
+          <div className="w-56 h-56 sm:w-60 sm:h-60 md:w-64 md:h-64 rounded-full overflow-hidden border-[5px] border-[#ffcc80] shadow-lg group-hover:shadow-2xl transition-all duration-300 bg-[#fffaf3] flex items-center justify-center">
+  <img
+    src={image}
+    alt={`Guru ${i + 1}`}
+    className="w-full h-full object-cover object-top rounded-full"
+  />
+</div>
 
             {/* Optional Glow on Hover */}
             <div className="absolute inset-0 rounded-full border-2 border-yellow-400 opacity-0 group-hover:opacity-70 blur-sm transition-opacity duration-300"></div>
