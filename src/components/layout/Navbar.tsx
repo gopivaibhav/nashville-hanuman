@@ -77,7 +77,7 @@ const Navbar: React.FC = () => {
               {[
                 { label: "Puja Schedule", path: "/religious/puja-schedule" },
                 { label: "Festivals", path: "/religious/festivals" },
-                { label: "Priests", path: "/religious/priests" },
+               // { label: "Priests", path: "/religious/priests" },
               ].map((item) => (
                 <li key={item.path}>
                   <Link
@@ -173,7 +173,7 @@ const Navbar: React.FC = () => {
             { label: "Deities", path: "/deities" },
             { label: "Puja Schedule", path: "/religious/puja-schedule" },
             { label: "Festivals", path: "/religious/festivals" },
-            { label: "Priests", path: "/religious/priests" },
+           // { label: "Priests", path: "/religious/priests" },
             { label: "Education", path: "/education/hvs" },
             { label: "Halls", path: "/community/halls" },
             { label: "Ram Ki Bandi", path: "/ramkibandi" },
