@@ -18,21 +18,29 @@ const Gurus: React.FC = () => {
 
   return (
     <div className="pt-24 pb-16 container mx-auto px-4">
+      {/* Title */}
       <h1 className="text-3xl font-bold text-center text-[#ff9933] mb-12">
         Our Gurus
       </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
+      {/* Circle Gallery - 3 per row */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 justify-items-center max-w-5xl mx-auto">
         {gurus.map((image, i) => (
           <div
             key={i}
-            className="bg-white rounded-2xl shadow-lg overflow-hidden border border-yellow-100 hover:shadow-xl transition-all duration-300"
+            className="relative group flex flex-col items-center text-center"
           >
-            <img
-              src={image}
-              alt={`Guru ${i + 1}`}
-              className="w-full h-96 object-cover object-center"
-            />
+            {/* Circular Image */}
+            <div className="w-44 h-44 sm:w-48 sm:h-48 rounded-full overflow-hidden border-6 border-[#ffcc80] shadow-md group-hover:shadow-xl transition-all duration-300">
+              <img
+                src={image}
+                alt={`Guru ${i + 1}`}
+                className="w-full h-full object-cover rounded-full"
+              />
+            </div>
+
+            {/* Optional Glow on Hover */}
+            <div className="absolute inset-0 rounded-full border-2 border-yellow-300 opacity-0 group-hover:opacity-70 blur-sm transition-opacity duration-300"></div>
           </div>
         ))}
       </div>
