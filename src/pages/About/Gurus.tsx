@@ -1,17 +1,17 @@
 import React from "react";
 
-import g1 from "../../../public/g1.png";
-import g2 from "../../../public/g2.png";
-import g3 from "../../../public/g3.png";
-import g4 from "../../../public/g4.png";
-import g5 from "../../../public/g5.png";
-import g6 from "../../../public/g6.png";
-import g7 from "../../../public/g7.png";
-import g8 from "../../../public/g8.png";
-import g9 from "../../../public/g9.png";
-import g10 from "../../../public/g10.png";
-import g11 from "../../../public/g11.png";
-import g12 from "../../../public/g12.png";
+import g1 from "../../../public/g01.png";
+import g2 from "../../../public/g02.png";
+import g3 from "../../../public/g03.png";
+import g4 from "../../../public/g04.png";
+import g5 from "../../../public/g05.png";
+import g6 from "../../../public/g06.png";
+import g7 from "../../../public/g07.png";
+import g8 from "../../../public/g08.png";
+import g9 from "../../../public/g09.png";
+import g10 from "../../../public/g010.png";
+import g11 from "../../../public/g011.png";
+import g12 from "../../../public/g012.png";
 
 const Gurus: React.FC = () => {
   const gurus = [g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12];
