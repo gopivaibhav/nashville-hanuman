@@ -1,6 +1,7 @@
 import React from "react";
 import { ScrollText } from "lucide-react";
 import { motion } from "framer-motion";
+import img1 from "../../../public/history.jpeg";
 
 const History: React.FC = () => {
   return (
@@ -13,8 +14,23 @@ const History: React.FC = () => {
         Our History
       </motion.h1>
 
+      <div className="flex justify-center mb-10">
+        <motion.div
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-[#ff9933] shadow-lg"
+        >
+          <img
+            src={img1}
+            alt="Temple History"
+            className="w-full h-full object-cover rounded-full"
+          />
+        </motion.div>
+      </div>
+
       <div className="max-w-4xl mx-auto text-gray-700 text-lg leading-relaxed">
-        <ScrollText className="text-[#ff9933] mb-4 mx-auto" size={32} />
+      
         <p className="mb-6">
           The idea of building a Nashville Hanuman Temple was envisioned in 2021
           by our founder and community devotees. By 2025, that dream blossomed
