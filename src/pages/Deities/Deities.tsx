@@ -2,11 +2,11 @@ import React, { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Calendar, Gift, Sparkles, Quote } from "lucide-react";
 import img1 from "../../../public/ganesha.jpeg";
-import img2 from  "../../../public/hanuman.jpg";
+import img2 from  "../../../public/hanuman2.png";
 import img3 from "../../../public/rama.jpg";
 import img4 from "../../../public/saraswathi.jpeg";
 import img5 from "../../../public/navagraha1.webp";
-import img6 from "../../../public/images.jpeg"
+import img6 from "../../../public/shiv.png"
 const deities = [
   {
     name: "Sri Ganesha",
