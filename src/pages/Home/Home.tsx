@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import img1 from "../../../public/founder.jpg";
+import img2 from "../../../public/history.jpeg";
 
 const Home: React.FC = () => {
   const [activeTab, setActiveTab] = useState("daily");
@@ -265,9 +266,9 @@ const Home: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <img
-              src="/images/temple-history.jpg"
-              alt="Temple History"
+           <img
+              src={img2}
+              alt="Our history"
               className="rounded-xl shadow-lg border-4 border-yellow-200"
             />
           </motion.div>
