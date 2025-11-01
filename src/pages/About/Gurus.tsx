@@ -1,13 +1,13 @@
 import React from "react";
 
-import g1 from "../../../public/g01.png";
+import g1 from "../../../public/gu01.png";
 import g2 from "../../../public/g02.png";
 import g3 from "../../../public/g03.png";
 import g4 from "../../../public/g04.png";
 import g5 from "../../../public/g05.jpeg";
 import g6 from "../../../public/g06.jpeg";
 import g7 from "../../../public/g07.png";
-import g8 from "../../../public/g08.png";
+import g8 from "../../../public/gu08.png";
 import g9 from "../../../public/g09.png";
 import g10 from "../../../public/g010.png";
 import g11 from "../../../public/g011.png";
