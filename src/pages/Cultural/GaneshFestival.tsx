@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Camera, Video } from 'lucide-react';
-import vid4 from '../../../public/vid4.mp4';
-import vid5 from '../../../public/vid5.mp4';  
+import { ChevronDown, ChevronUp, Camera, Video } from 'lucide-react'; 
 
 const GaneshFestival: React.FC = () => {
   const [photosOpen, setPhotosOpen] = useState(true);
   const [videosOpen, setVideosOpen] = useState(true);
 
   const photos = [
-    { id: 1, url: 'https://res.cloudinary.com/ddwvurvd4/video/upload/v1762052766/vid6_ue7is1.mp4', title: 'Ganesh Festival 1' },
+    { id: 1, url: 'https://res.cloudinary.com/ddwvurvd4/image/upload/v1762056535/cult-img10_aojk4q.jpg', title: 'Ganesh Festival 1' },
     { id: 2, url: 'https://res.cloudinary.com/ddwvurvd4/image/upload/v1762052399/cult-img13_dwjeok.jpg', title: 'Ganesh Festival 2' },
     { id: 3, url: 'https://res.cloudinary.com/ddwvurvd4/image/upload/v1762052400/cult-img15_ytrkcl.jpg', title: 'Ganesh Festival 3' },
     { id: 4, url: 'https://res.cloudinary.com/ddwvurvd4/image/upload/v1762052399/cult-img9_t8j7zi.jpg', title: 'Ganesh Festival 4' },
