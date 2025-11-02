@@ -22,7 +22,6 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    // 🟧 Deep saffron navbar with contrasting text
     <nav className="bg-[#ff9933] text-[#4a1c1c] shadow-md fixed w-full z-50">
       <div className="w-full flex justify-between items-center px-4 py-3">
         {/* Logo + Title */}
@@ -31,9 +30,8 @@ const Navbar: React.FC = () => {
           onClick={closeAll}
           className="flex items-center font-bold text-base sm:text-lg md:text-xl text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
         >
-          {/* 🪔 Temple Logo */}
           <img
-            src={img1} // 👉 replace with your actual logo path
+            src={img1}
             alt="Temple Logo"
             className="w-20 -mb-5 h-20 -mt-5 sm:w-20 sm:h-20 md:w-24 md:-mb-5 md:h-24 md:-mt-5 rounded-full object-cover flex-shrink-0"
           />
@@ -83,7 +81,6 @@ const Navbar: React.FC = () => {
               {[
                 { label: "Puja Schedule", path: "/religious/puja-schedule" },
                 { label: "Festivals", path: "/religious/festivals" },
-                // { label: "Priests", path: "/religious/priests" },
               ].map((item) => (
                 <li key={item.path}>
                   <Link
@@ -116,10 +113,38 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
 
-          <li>
-            <Link to="/cultural" className="text-[#4a1c1c] hover:text-[#fff4e6] transition-colors">
-              Cultural
-            </Link>
+          {/* Cultural Dropdown */}
+          <li
+            className="relative"
+            onMouseEnter={() => setActiveDropdown("cultural")}
+            onMouseLeave={() => setActiveDropdown(null)}
+          >
+            <button className="flex items-center hover:text-[#fff4e6] transition-colors">
+              Cultural <ChevronDown size={16} className="ml-1" />
+            </button>
+            <ul
+              className={classNames(
+                "absolute left-0 mt-2 bg-[#ff9933] shadow-lg rounded-md w-56 transition-all duration-200 ease-in-out",
+                activeDropdown === "cultural"
+                  ? "opacity-100 visible translate-y-0"
+                  : "opacity-0 invisible -translate-y-2"
+              )}
+            >
+              {[
+                { label: "Ganesh Festival", path: "/cultural/ganesh-festival" },
+                { label: "Kanya Pooja", path: "/cultural/kanya-pooja" },
+              ].map((item) => (
+                <li key={item.path}>
+                  <Link
+                    to={item.path}
+                    onClick={closeAll}
+                    className="block px-4 py-2 text-[#4a1c1c] hover:bg-[#e67a00] hover:text-white rounded transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </li>
 
           {/* About Dropdown */}
@@ -177,7 +202,7 @@ const Navbar: React.FC = () => {
           <Link
             to="/"
             onClick={closeAll}
-            className="block py-2 text-[#4a1c1c]  hover:text-[#fff4e6] transition-colors"
+            className="block py-2 text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
           >
             Home
           </Link>
@@ -221,13 +246,6 @@ const Navbar: React.FC = () => {
                 >
                   Festivals
                 </Link>
-                {/* <Link
-                  to="/religious/priests"
-                  onClick={closeAll}
-                  className="block py-2 text-sm hover:text-[#fff4e6] transition-colors"
-                >
-                  Priests
-                </Link> */}
               </div>
             )}
           </div>
@@ -256,13 +274,40 @@ const Navbar: React.FC = () => {
             Ram Ki Bandi
           </Link>
 
-          <Link
-            to="/cultural"
-            onClick={closeAll}
-            className="block py-2 text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
-          >
-            Cultural
-          </Link>
+          {/* Mobile Cultural Dropdown */}
+          <div>
+            <button
+              onClick={() => toggleMobileDropdown("cultural")}
+              className="flex items-center justify-between w-full py-2 text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
+            >
+              Cultural
+              <ChevronDown
+                size={16}
+                className={classNames(
+                  "transition-transform",
+                  mobileDropdown === "cultural" && "rotate-180"
+                )}
+              />
+            </button>
+            {mobileDropdown === "cultural" && (
+              <div className="pl-4 space-y-1 mt-1">
+                <Link
+                  to="/cultural/ganesh-festival"
+                  onClick={closeAll}
+                  className="block py-2 text-sm text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
+                >
+                  Ganesh Festival
+                </Link>
+                <Link
+                  to="/cultural/kanya-pooja"
+                  onClick={closeAll}
+                  className="block py-2 text-sm text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
+                >
+                  Kanya Pooja
+                </Link>
+              </div>
+            )}
+          </div>
 
           {/* Mobile About Dropdown */}
           <div>
