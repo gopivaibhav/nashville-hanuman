@@ -2,6 +2,8 @@ import { Routes, Route, Outlet } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import MainLayout from "./components/layout/MainLayout";
 import NotFound from "./pages/NotFound";
+import GaneshFestival from "./pages/Cultural/GaneshFestival";
+import KanyaPooja from "./pages/Cultural/KanyaPooja";
 
 /* Lazy loaded pages */
 const Home = lazy(() => import("./pages/Home/Home"));
@@ -95,6 +97,8 @@ function App() {
 
           {/*  Cultural */}
           <Route path="cultural" element={<Cultural />} />
+          <Route path="cultural/ganesh-festival" element={<GaneshFestival />} />
+          <Route path="cultural/kanya-pooja" element={<KanyaPooja />} />
 
           {/*  Donate */}
           <Route path="donate" element={<Donate />} />
