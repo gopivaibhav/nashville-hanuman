@@ -267,10 +267,10 @@ const Home: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
            <img
-              src={img2}
-              alt="Our history"
-              className="rounded-xl shadow-lg border-4 border-yellow-200"
-            />
+  src={img2}
+  alt="Temple History"
+  className="w-full h-64 md:h-72 lg:h-96 object-cover rounded-lg"
+/>
           </motion.div>
 
           <motion.div
