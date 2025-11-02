@@ -523,51 +523,48 @@ const Home: React.FC = () => {
           </div>
           {/* 🎉 Upcoming Events */}
           <div className="bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden">
-            <div className="bg-[#7b1113] text-[#ff9933] font-semibold py-2 uppercase tracking-wide">
-              Upcoming Events
-            </div>
-            <div className="bg-[url('/images/pattern-light.png')] bg-opacity-5 bg-cover bg-center p-5 text-left text-gray-800 space-y-4">
-              {[
-                {
-                  img: "/images/deities/hanuman.jpg",
-                  title: "Navagraha and Nagadevi Prathista",
-                  date: "Mar 08 – Dec 31",
-                },
-                {
-                  img: "/images/deities/siva.jpg",
-                  title: "Navarathri – 2025",
-                  date: "Sep 22 – Oct 31",
-                },
-                {
-                  img: "/images/deities/saraswathi.jpg",
-                  title: "Diwali Celebrations – 2025",
-                  date: "Oct 20",
-                },
-                {
-                  img: "/images/deities/rama.jpg",
-                  title: "Karthika Masam – 2025",
-                  date: "Nov 01 – Nov 30",
-                },
-              ].map((event, i) => (
-                <div
-                  key={i}
-                  className="flex items-center space-x-4 border-b border-yellow-100 pb-3 last:border-none"
-                >
-                  <img
-                    src={event.img}
-                    alt={event.title}
-                    className="w-12 h-12 rounded-md object-cover border border-yellow-200"
-                  />
-                  <div>
-                    <h3 className="text-[#ff9933] font-semibold text-sm">
-                      {event.title}
-                    </h3>
-                    <p className="text-xs text-gray-600">{event.date}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+  <div className="bg-[#7b1113] text-[#ff9933] font-semibold py-2 uppercase tracking-wide">
+    Upcoming Events
+  </div>
+  <div className="bg-[url('/images/pattern-light.png')] bg-opacity-5 bg-cover bg-center p-5 text-left text-gray-800 space-y-4">
+    {[
+      {
+        title: "Navagraha and Nagadevi Prathista",
+        date: "Mar 08 – Dec 31",
+      },
+      {
+        title: "Navarathri – 2025",
+        date: "Sep 22 – Oct 31",
+      },
+      {
+        title: "Diwali Celebrations – 2025",
+        date: "Oct 20",
+      },
+      {
+        title: "Karthika Masam – 2025",
+        date: "Nov 01 – Nov 30",
+      },
+    ].map((event, i) => (
+      <div
+        key={i}
+        className="flex items-center space-x-4 border-b border-yellow-100 pb-3 last:border-none"
+      >
+        <img
+          src="https://res.cloudinary.com/dzd85cimy/image/upload/v1762088548/navratri_ha8hgy.jpg"
+          alt={event.title}
+          className="w-12 h-12 rounded-md object-cover border border-yellow-200"
+        />
+        <div>
+          <h3 className="text-[#ff9933] font-semibold text-sm">
+            {event.title}
+          </h3>
+          <p className="text-xs text-gray-600">{event.date}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
         </div>
       </section>
 
