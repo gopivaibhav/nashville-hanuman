@@ -26,7 +26,7 @@ const GaneshFestival: React.FC = () => {
   const videos = [
     { id: 1, url: 'https://res.cloudinary.com/ddwvurvd4/video/upload/v1762052749/vid2_shphik.mp4', title: 'Ganesh Festival Video 1' },
     { id: 2, url: 'https://res.cloudinary.com/ddwvurvd4/video/upload/v1762052748/vid4_zbvxga.mp4', title: 'Ganesh Festival Video 2' },
-    { id: 3, url: 'https://res.cloudinary.com/ddwvurvd4/video/upload/v1762052746/vid1_yqgb5m.3gp', title: 'Ganesh Festival Video 3' },
+    // { id: 3, url: 'https://res.cloudinary.com/ddwvurvd4/video/upload/v1762052746/vid1_yqgb5m.3gp', title: 'Ganesh Festival Video 3' },
     { id: 4, url: 'https://res.cloudinary.com/ddwvurvd4/video/upload/v1762056062/vid3_1_uqkoru.mp4', title: 'Ganesh Festival Video 4' },
     { id: 5, url: 'https://res.cloudinary.com/ddwvurvd4/video/upload/v1762056082/vid5_1_yka5pu.mp4', title: 'Ganesh Festival Video 5' },
     { id: 6, url: 'https://res.cloudinary.com/ddwvurvd4/video/upload/v1762055646/vid6_vaojj8.mp4', title: 'Ganesh Festival Video 6' }
@@ -111,3 +111,4 @@ const GaneshFestival: React.FC = () => {
 };
 
 export default GaneshFestival;
+
