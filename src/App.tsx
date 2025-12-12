@@ -4,7 +4,8 @@ import MainLayout from "./components/layout/MainLayout";
 import NotFound from "./pages/NotFound";
 import GaneshFestival from "./pages/Cultural/GaneshFestival";
 import KanyaPooja from "./pages/Cultural/KanyaPooja";
-
+import PhotosPage from "./pages/Cultural/PhotosPage";
+import VideosPage from "./pages/Cultural/VideosPage";
 /* Lazy loaded pages */
 const Home = lazy(() => import("./pages/Home/Home"));
 const Deities = lazy(() => import("./pages/Deities/Deities"));
@@ -99,6 +100,9 @@ function App() {
           <Route path="cultural" element={<Cultural />} />
           <Route path="cultural/ganesh-festival" element={<GaneshFestival />} />
           <Route path="cultural/kanya-pooja" element={<KanyaPooja />} />
+          <Route path="/cultural/photos" element={<PhotosPage />} />
+          <Route path="/cultural/videos" element={<VideosPage />} />
+
 
           {/*  Donate */}
           <Route path="donate" element={<Donate />} />

@@ -131,8 +131,12 @@ const Navbar: React.FC = () => {
               )}
             >
               {[
-                { label: "Ganesh Festival", path: "/cultural/ganesh-festival" },
-                { label: "Kanya Pooja", path: "/cultural/kanya-pooja" },
+                // { label: "Ganesh Festival", path: "/cultural/ganesh-festival" },
+                // { label: "Kanya Pooja", path: "/cultural/kanya-pooja" },
+                { label: "Photos", path: "/cultural/photos" },
+                { label: "Videos", path: "/cultural/videos" },
+
+
               ].map((item) => (
                 <li key={item.path}>
                   <Link

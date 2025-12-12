@@ -11,7 +11,10 @@ import {
 import { Link } from "react-router-dom";
 import img1 from "../../../public/founder.jpg";
 import img2 from "../../../public/history.jpeg";
-
+import img3 from "../../../public/diwali.jpeg";
+import img4 from "../../../public/durga.jpeg";
+import img5 from "../../../public/nagadevi.jpeg";
+import img6 from "../../../public/masam.jpeg";
 const Home: React.FC = () => {
   const [activeTab, setActiveTab] = useState("daily");
 
@@ -270,7 +273,7 @@ const Home: React.FC = () => {
   src={img2}
   alt="Temple History"
   className="w-full h-64 md:h-72 lg:h-96 object-cover rounded-lg"
-/>
+  />
           </motion.div>
 
           <motion.div
@@ -522,27 +525,34 @@ const Home: React.FC = () => {
             </div>
           </div>
           {/* 🎉 Upcoming Events */}
-          <div className="bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden">
+
+              <div className="bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden">
   <div className="bg-[#7b1113] text-[#ff9933] font-semibold py-2 uppercase tracking-wide">
     Upcoming Events
   </div>
-  <div className="bg-[url('/images/pattern-light.png')] bg-opacity-5 bg-cover bg-center p-5 text-left text-gray-800 space-y-4">
+
+  <div className="bg-[url('/images/pattern-light.png')] bg-cover bg-center p-5 text-left text-gray-800 space-y-4">
+
     {[
       {
         title: "Navagraha and Nagadevi Prathista",
         date: "Mar 08 – Dec 31",
+        img: img5,
       },
       {
         title: "Navarathri – 2025",
         date: "Sep 22 – Oct 31",
+        img: img4,
       },
       {
         title: "Diwali Celebrations – 2025",
         date: "Oct 20",
+        img: img3,
       },
       {
         title: "Karthika Masam – 2025",
         date: "Nov 01 – Nov 30",
+        img: img6,
       },
     ].map((event, i) => (
       <div
@@ -550,10 +560,11 @@ const Home: React.FC = () => {
         className="flex items-center space-x-4 border-b border-yellow-100 pb-3 last:border-none"
       >
         <img
-          src="https://res.cloudinary.com/dzd85cimy/image/upload/v1762088548/navratri_ha8hgy.jpg"
+          src={event.img}
           alt={event.title}
           className="w-12 h-12 rounded-md object-cover border border-yellow-200"
         />
+
         <div>
           <h3 className="text-[#ff9933] font-semibold text-sm">
             {event.title}
@@ -562,8 +573,10 @@ const Home: React.FC = () => {
         </div>
       </div>
     ))}
+
   </div>
 </div>
+
 
         </div>
       </section>

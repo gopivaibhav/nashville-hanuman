@@ -3,6 +3,11 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
 const Contact: React.FC = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [loading, setLoading] = useState(false);
+  const [feedback, setFeedback] = useState<string | null>(null);
+
+  // Backend URL from .env
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -10,10 +15,43 @@ const Contact: React.FC = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  
+
+    const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Your message has been sent! Jai Hanuman!");
-    setForm({ name: "", email: "", message: "" });
+
+    //  Frontend validation (extra layer before backend)
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+      setFeedback("Please fill in all required fields.");
+      return;
+    }
+
+    try {
+      setLoading(true);
+      setFeedback(null);
+
+      const response = await fetch(`${API_BASE_URL}/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        console.log("Sending to:", `${API_BASE_URL}/contact`);
+
+        setFeedback(" Your message has been sent! Jai Hanuman!");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        setFeedback(" Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting contact form:", error);
+      setFeedback(" Something went wrong. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
