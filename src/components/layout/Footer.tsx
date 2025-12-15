@@ -79,6 +79,7 @@ const Footer: React.FC = () => {
   rights reserved.
   <br />
    <br />
+      <br />
   
  <div className="border-t border-gray-400 mx-4 sm:mx-8 lg:mx-96"></div>
 <div className="pb-4 text-center text-gray-400 mt-5">
