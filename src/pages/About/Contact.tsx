@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
       setLoading(true);
       setFeedback(null);
 
-      const response = await fetch(`${API_BASE_URL}/api/temple`, {
+      const response = await fetch(`${API_BASE_URL}/api/temple/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -39,7 +39,7 @@ const Contact: React.FC = () => {
       const data = await response.json();
 
       if (response.ok && data.success) {
-        console.log("Sending to:", `${API_BASE_URL}/api/temple`);
+        console.log("Sending to:", `${API_BASE_URL}/api/temple/contact`);
 
         setFeedback(" Your message has been sent! Jai Hanuman!");
         setForm({ name: "", email: "", message: "" });
