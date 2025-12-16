@@ -2,6 +2,12 @@ import React from "react";
 
 const PhotosPage: React.FC = () => {
 
+   const [selectedPhoto, setSelectedPhoto] = React.useState<{
+  url: string;
+  title?: string;
+} | null>(null);
+
+
   // Combine all event photos (currently only Ganesh Festival)
   const photos = [
     { id: 1, url: 'https://res.cloudinary.com/ddwvurvd4/image/upload/v1762056535/cult-img10_aojk4q.jpg' },
@@ -44,14 +50,64 @@ const PhotosPage: React.FC = () => {
             key={photo.id}
             className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition"
           >
-            <img
-              src={photo.url}
-              alt="Cultural"
-              className="w-full h-44 sm:h-48 md:h-56 object-cover"
-            />
+           <img
+  src={photo.url}
+  alt={photo.title || "Cultural"}
+  className="w-full h-44 sm:h-48 md:h-56 object-cover cursor-pointer hover:scale-105 transition"
+  onClick={() => setSelectedPhoto(photo)}
+/>
           </div>
         ))}
       </div>
+
+      {/* Image Preview Modal */}
+{selectedPhoto && (
+  <div
+    className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 px-4"
+    onClick={() => setSelectedPhoto(null)}
+  >
+    <div
+      className="relative max-w-4xl w-full"
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* Close button */}
+      <button
+        onClick={() => setSelectedPhoto(null)}
+        className="absolute -top-10 right-0 text-white text-2xl font-bold"
+      >
+        ✕
+      </button>
+
+      {/* Full image */}
+      <img
+        src={selectedPhoto.url}
+        alt={selectedPhoto.title || "Cultural"}
+        className="w-full max-h-[80vh] object-contain rounded-lg shadow-lg"
+      />
+
+      {/* Download + Close */}
+      <div className="mt-4 flex justify-center gap-4">
+        <a
+          href={selectedPhoto.url}
+          download
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-[#ff9933] text-white px-5 py-2 rounded-md hover:bg-[#e67a00] transition"
+        >
+          Download
+        </a>
+
+        <button
+          onClick={() => setSelectedPhoto(null)}
+          className="bg-white text-gray-800 px-5 py-2 rounded-md hover:bg-gray-200 transition"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
   );
 };
