@@ -5,6 +5,8 @@ const Contact: React.FC = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
   const [feedback, setFeedback] = useState<string | null>(null);
+  const [showPopup, setShowPopup] = useState(false);
+
 
   // Backend URL from .env
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -41,8 +43,9 @@ const Contact: React.FC = () => {
       if (response.ok && data.success) {
         console.log("Sending to:", `${API_BASE_URL}/api/temple/contact`);
 
-        setFeedback(" Your message has been sent! Jai Hanuman!");
-        setForm({ name: "", email: "", message: "" });
+       setShowPopup(true);
+setForm({ name: "", email: "", message: "" });
+
       } else {
         setFeedback(" Failed to send message. Please try again.");
       }
@@ -114,6 +117,32 @@ const Contact: React.FC = () => {
           </button>
         </form>
       </div>
+      {/* Success Popup */}
+{showPopup && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="bg-white rounded-xl p-6 max-w-md w-full text-center shadow-lg">
+      <h2 className="text-2xl font-bold text-[#ff9933] mb-3">
+        Message Sent 🙏
+      </h2>
+
+      <p className="text-gray-700 mb-6">
+        Thank you for contacting us.
+        <br />
+        Your message has been sent successfully.
+        <br />
+        <span className="font-semibold">Jai Hanuman!</span>
+      </p>
+
+      <button
+        onClick={() => setShowPopup(false)}
+        className="bg-[#ff9933] text-white px-6 py-2 rounded-md hover:bg-[#e67a00] transition"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+)}
+
     </div>
   );
 };
