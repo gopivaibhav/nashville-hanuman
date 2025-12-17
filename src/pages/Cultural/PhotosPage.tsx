@@ -103,8 +103,8 @@ const goPrev = () => {
 
       {/* Full image */}
       <img
-        src={selectedPhoto.url}
-        alt={selectedPhoto.title || "Cultural"}
+        src={currentPhoto.url}
+        alt={currentPhoto.title || "Cultural"}
         className="w-full max-h-[80vh] object-contain rounded-lg shadow-lg"
       />
 
