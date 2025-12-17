@@ -2,10 +2,9 @@ import React from "react";
 
 const PhotosPage: React.FC = () => {
 
-   const [selectedPhoto, setSelectedPhoto] = React.useState<{
-  url: string;
-  title?: string;
-} | null>(null);
+    const [selectedIndex, setSelectedIndex] = React.useState<number | null>(null);
+
+
 
 
   // Combine all event photos (currently only Ganesh Festival)
@@ -38,6 +37,22 @@ const PhotosPage: React.FC = () => {
   
   ];
 
+    const currentPhoto =
+  selectedIndex !== null ? photos[selectedIndex] : null;
+
+  const goNext = () => {
+  setSelectedIndex((prev) =>
+    prev === null ? 0 : (prev + 1) % photos.length
+  );
+};
+
+const goPrev = () => {
+  setSelectedIndex((prev) =>
+    prev === null ? 0 : (prev - 1 + photos.length) % photos.length
+  );
+};
+
+
   return (
     <div className="pt-24 px-4 md:px-10 pb-10 bg-gradient-to-b from-[#fff3cc] via-[#ffe8a3] to-[#fff1cc]">
       <h1 className="text-3xl md:text-4xl font-bold text-center text-[#4a1c1c] mb-8">
@@ -45,7 +60,7 @@ const PhotosPage: React.FC = () => {
       </h1>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-        {photos.map((photo) => (
+        {photos.map((photo,index) => (
           <div
             key={photo.id}
             className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition"
@@ -54,17 +69,17 @@ const PhotosPage: React.FC = () => {
   src={photo.url}
   alt={photo.title || "Cultural"}
   className="w-full h-44 sm:h-48 md:h-56 object-cover cursor-pointer hover:scale-105 transition"
-  onClick={() => setSelectedPhoto(photo)}
+  onClick={() => setSelectedIndex(index)}
 />
           </div>
         ))}
       </div>
 
       {/* Image Preview Modal */}
-{selectedPhoto && (
+{currentPhoto && (
   <div
     className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 px-4"
-    onClick={() => setSelectedPhoto(null)}
+    onClick={() => setSelectedIndex(null)}
   >
     <div
       className="relative max-w-4xl w-full"
@@ -72,11 +87,19 @@ const PhotosPage: React.FC = () => {
     >
       {/* Close button */}
       <button
-        onClick={() => setSelectedPhoto(null)}
+        onClick={() => setSelectedIndex(null)}
         className="absolute -top-10 right-0 text-white text-2xl font-bold"
       >
         ✕
       </button>
+
+        <button
+  onClick={goPrev}
+  className="absolute left-2 top-1/2 -translate-y-1/2 text-white text-5xl z-10"
+>
+  ‹
+</button>
+
 
       {/* Full image */}
       <img
@@ -85,10 +108,17 @@ const PhotosPage: React.FC = () => {
         className="w-full max-h-[80vh] object-contain rounded-lg shadow-lg"
       />
 
+        <button
+    onClick={goNext}
+    className="absolute right-2 top-1/2 -translate-y-1/2 text-white text-5xl z-10"
+  >
+    ›
+  </button>
+
       {/* Download + Close */}
       <div className="mt-4 flex justify-center gap-4">
         <a
-          href={selectedPhoto.url}
+          href={currentPhoto.url}
           download
           target="_blank"
           rel="noopener noreferrer"
@@ -98,7 +128,7 @@ const PhotosPage: React.FC = () => {
         </a>
 
         <button
-          onClick={() => setSelectedPhoto(null)}
+          onClick={() => setSelectedIndex(null)}
           className="bg-white text-gray-800 px-5 py-2 rounded-md hover:bg-gray-200 transition"
         >
           Close
