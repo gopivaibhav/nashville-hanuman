@@ -296,18 +296,18 @@ const Navbar: React.FC = () => {
             {mobileDropdown === "cultural" && (
               <div className="pl-4 space-y-1 mt-1">
                 <Link
-                  to="/cultural/ganesh-festival"
+                  to="/cultural/photos"
                   onClick={closeAll}
                   className="block py-2 text-sm text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
                 >
-                  Ganesh Festival
+                 Photos
                 </Link>
                 <Link
-                  to="/cultural/kanya-pooja"
+                  to="/cultural/videos"
                   onClick={closeAll}
                   className="block py-2 text-sm text-[#4a1c1c] hover:text-[#fff4e6] transition-colors"
                 >
-                  Kanya Pooja
+                  Videos
                 </Link>
               </div>
             )}
