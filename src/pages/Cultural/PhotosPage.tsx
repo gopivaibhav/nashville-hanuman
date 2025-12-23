@@ -32,8 +32,8 @@ const PhotosPage: React.FC = () => {
     { id: 21, url: 'https://res.cloudinary.com/ddwvurvd4/image/upload/v1762052399/k-img4_adaf5m.jpg', title: 'Ganesh Festival 6' },
     { id: 22, url: 'https://res.cloudinary.com/ddwvurvd4/image/upload/v1762052401/k-img6_paabgn.jpg', title: 'Ganesh Festival 7' },
     { id: 23, url: 'https://res.cloudinary.com/ddwvurvd4/image/upload/v1762052399/k-img1_adya3q.jpg', title: 'Ganesh Festival 8' },
-    { id: 24, url: 'https://res.cloudinary.com/ddwvurvd4/image/upload/v1762052397/k-img2_z1r1oq.jpg', title: 'Ganesh Festival 9' },
-    { id: 25, url: 'https://res.cloudinary.com/ddwvurvd4/image/upload/v1762052402/k-img10_vsgkj0.jpg', title: 'Ganesh Festival 10' }
+    { id: 24, url: 'https://res.cloudinary.com/ddwvurvd4/image/upload/v1762052397/k-img2_z1r1oq.jpg', title: 'Ganesh Festival 9' }
+    
   
   ];
 
