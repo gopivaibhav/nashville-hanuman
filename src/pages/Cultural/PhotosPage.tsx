@@ -33,8 +33,6 @@ const PhotosPage: React.FC = () => {
     { id: 22, url: 'https://res.cloudinary.com/ddwvurvd4/image/upload/v1762052401/k-img6_paabgn.jpg', title: 'Ganesh Festival 7' },
     { id: 23, url: 'https://res.cloudinary.com/ddwvurvd4/image/upload/v1762052399/k-img1_adya3q.jpg', title: 'Ganesh Festival 8' },
     { id: 24, url: 'https://res.cloudinary.com/ddwvurvd4/image/upload/v1762052397/k-img2_z1r1oq.jpg', title: 'Ganesh Festival 9' }
-    
-  
   ];
 
     const currentPhoto =
