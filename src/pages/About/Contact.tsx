@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail} from "lucide-react";
 
 const Contact: React.FC = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -65,13 +65,13 @@ setForm({ name: "", email: "", message: "" });
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Contact Info */}
         <div className="space-y-4 text-gray-700">
-          <p className="flex items-center">
+          {/* <p className="flex items-center">
             <MapPin className="text-[#ff9933] mr-2" />
             123 Hanuman Avenue, Nashville, TN 37209
           </p>
           <p className="flex items-center">
             <Phone className="text-[#ff9933] mr-2" /> (615) 555-1080
-          </p>
+          </p> */}
           <p className="flex items-center">
             <Mail className="text-[#ff9933] mr-2" /> info@nashvillehanuman.org
           </p>
